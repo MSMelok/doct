@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<!-- بِسْم اللَّه الرَّحْمن الرَّحِيم -->
+<!-- وَعَلَّمَكَ مَا لَمْ تَكُن تَعْلَمُ ۚ وَكَانَ فَضْلُ ٱللَّهِ عَلَيْكَ عَظِيمًۭا -->
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="https://www.optimum.com/themes/custom/optimum/slice/favicon/favicon-16x16.png">
+    <title>CheckMate - Stay Awake</title>
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K9F091RHMT"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-K9F091RHMT');
+</script>
+
+<body>
+
+    <style>
+        body {
+            background:
+            linear-gradient(135deg,#0000 18.75%,#ffffff 0 31.25%,#0000 0),
+            repeating-linear-gradient(45deg,#ffffff -6.25% 6.25%,rgba(0, 160, 240, 0.25) 0 18.75%);
+            font-family: "Regular", sans-serif;
+            font-weight: 500;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        @font-face {
+                font-family: "Regular";
+                src: url('https://raw.githubusercontent.com/MSALAHAH/checkmate/main/fonts/Regular-Light.woff') format('woff'), url('https://raw.githubusercontent.com/MSALAHAH/checkmate/main/fonts/Regular-Light.woff2') format('woff2');
+                font-weight: 300;
+                font-style: normal;
+            }
+
+            @font-face {
+                font-family: "Regular";
+                src: url('https://raw.githubusercontent.com/MSALAHAH/checkmate/main/fonts/Regular-Regular.woff') format('woff'), url('https://raw.githubusercontent.com/MSALAHAH/checkmate/main/fonts/Regular-Regular.woff2') format('woff2');
+                font-weight: 400;
+                font-style: normal;
+            }
+
+            @font-face {
+                font-family: "Regular";
+                src: url('https://raw.githubusercontent.com/MSALAHAH/checkmate/main/fonts/Regular-Medium.woff') format('woff'), url('https://raw.githubusercontent.com/MSALAHAH/checkmate/main/fonts/Regular-Medium.woff2') format('woff2');
+                font-weight: 500;
+                font-style: normal;
+            }
+
+            @font-face {
+                font-family: "Regular";
+                src: url('https://raw.githubusercontent.com/MSALAHAH/checkmate/main/fonts/Regular-Bold.woff') format('woff'), url('https://raw.githubusercontent.com/MSALAHAH/checkmate/main/fonts/Regular-Bold.woff2') format('woff2');
+                font-weight: 700;
+                font-style: normal;
+            }
+
+        #downloadInfo {
+            text-align: center;
+            text-shadow: 2px 5px 6px #7b7b7b;
+        }
+
+        #browserButtons {
+            display: flex;
+            margin-top: 10px;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #browserButtons button{
+            font-family: inherit;
+            font-weight: 500;
+            display: block;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            padding: 10px 40px 10px 15px;
+            margin: 15px;
+            font-size: 21px;
+            box-shadow: 0px 0px 7px 1px #7b7b7b87;
+        }
+
+        #edgeButton {
+            background: url('https://raw.githubusercontent.com/MSALAHAH/checkmate/main/attach/edgeLogo.png') no-repeat right center;
+            background-size: 32px;
+        }
+
+        #edgeButton:hover {
+            background-size: 175px;
+            transition: all 0.3s ease;
+            color: #00000000;
+        }
+
+        #chromeButton {
+                    background: url('https://raw.githubusercontent.com/MSALAHAH/checkmate/main/attach/chromeLogo.png') no-repeat right center;
+                    background-size: 32px;
+                }
+
+        #chromeButton:hover {
+            background-size: 195px;
+            transition: all 0.3s ease;
+            color: #00000000;
+        }
+
+        #firefoxButton {
+                    background: url('https://raw.githubusercontent.com/MSALAHAH/checkmate/main/attach/firefoxLogo.png') no-repeat right center;
+                    background-size: 32px;
+                }
+
+        #firefoxButton:hover {
+            background-size: 175px;
+            transition: all 0.3s ease;
+            color: #00000000;
+        }
+
+    </style>
+
+    <div id="downloadInfo">
+        <p id="browserInfo">Please click the appropriate button based on your browser:</p>
+        <div id="browserButtons">
+            <button id="edgeButton" style="display: none;" onclick="handleButtonClick('Edge')">Microsoft Edge</button>
+            <button id="chromeButton" style="display: none;" onclick="handleButtonClick('Chrome')">Google Chrome</button>
+            <button id="firefoxButton" style="display: none;" onclick="handleButtonClick('Firefox')">Mozilla Firefox</button>
+            <button id="revealAllButton" onclick="revealAllButtons()" style="padding: 10px 30px;">Not Your Browser?</button>
+        </div>
+    </div>
+
+    <script>
+        function handleButtonClick(browser) {
+            var link;
+            if (browser === 'Edge') {
+                link = 'https://microsoftedge.microsoft.com/addons/detail/caffeine-keep-awake/kfcdcelkpooajbeepngjepgklbagnkng';
+            } else if (browser === 'Chrome') {
+                link = 'https://chromewebstore.google.com/detail/caffeine-keep-awake/fcblbbbkcneogddmpmfdchnocbpfpmag?utm_source=ext_app_menu';
+            } else if (browser === 'Firefox') {
+                link = 'https://addons.mozilla.org/en-US/firefox/addon/keep-awake-screen-only/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search';
+            }
+
+            // Redirect to the specified link
+            window.location.href = link;
+        }
+
+        function revealAllButtons() {
+            // Show all buttons
+            document.getElementById('edgeButton').style.display = 'block';
+            document.getElementById('chromeButton').style.display = 'block';
+            document.getElementById('firefoxButton').style.display = 'block';
+            document.getElementById('revealAllButton').style.display = 'none';
+            document.getElementById('browserInfo').innerText = 'Please click the appropriate button based on your browser:';
+        }
+
+        // Detect the browser and show the relevant button
+        var isEdge = navigator.userAgent.includes("Edg");
+        var isChrome = navigator.userAgent.includes("Chrome");
+        var isFirefox = navigator.userAgent.includes("Firefox");
+
+        if (isEdge) {
+            document.getElementById('browserInfo').innerText = 'You are using Microsoft Edge. Click the button below:';
+            document.getElementById('edgeButton').style.display = 'block';
+        } else if (isChrome) {
+            document.getElementById('browserInfo').innerText = 'You are using Google Chrome. Click the button below:';
+            document.getElementById('chromeButton').style.display = 'block';
+        } else if (isFirefox) {
+            document.getElementById('browserInfo').innerText = 'You are using Mozilla Firefox. Click the button below:';
+            document.getElementById('firefoxButton').style.display = 'block';
+        } else {
+            // Display a default message or handle other browsers
+            document.getElementById('browserInfo').innerText = 'Click the button below:';
+            // Display the default button if needed
+            document.getElementById('edgeButton').style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>

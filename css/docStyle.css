@@ -1,0 +1,616 @@
+            /* بِسْم اللَّه الرَّحْمن الرَّحِيم */
+            /* وَعَلَّمَكَ مَا لَمْ تَكُن تَعْلَمُ ۚ وَكَانَ فَضْلُ ٱللَّهِ عَلَيْكَ عَظِيمًۭا */
+            @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;800&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;800&display=swap');
+
+            *,
+            ::before,
+            ::after {
+                box-sizing: border-box;
+            }
+
+            body {
+                display: flex;
+                background: url('https://raw.githubusercontent.com/MSALAHAH/checkmate.beta/main/attach/blob.svg');
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center center;
+                background-color: #618eaf;
+                /* background-image: linear-gradient(to right top, #051937, #057abf, #00a1af, #00d173a8, #057abf); */
+                margin: 0;
+                font-family: "JetBrains Mono", sans-serif;
+                font-weight: 500;
+                font-size: 1rem;
+                transition: .5s;
+                scroll-behavior: smooth;
+                align-items: center;
+                justify-content: center;
+                /* align-content: center; */
+                flex-direction: column;
+                letter-spacing: -2px;
+            }
+
+
+                    /* OPTIMUM_FONT */
+            /* @font-face {
+                font-family: "Regular";
+                src: url('https://raw.githubusercontent.com/MSALAHAH/checkmate.beta/main/fonts/Regular-Light.woff') format('woff'), url('https://raw.githubusercontent.com/MSALAHAH/checkmate.beta/main/fonts/Regular-Light.woff2') format('woff2');
+                font-weight: 300;
+                font-style: normal;
+            }
+
+            @font-face {
+                font-family: "Regular";
+                src: url('https://raw.githubusercontent.com/MSALAHAH/checkmate.beta/main/fonts/Regular-Regular.woff') format('woff'), url('https://raw.githubusercontent.com/MSALAHAH/checkmate.beta/main/fonts/Regular-Regular.woff2') format('woff2');
+                font-weight: 400;
+                font-style: normal;
+            }
+
+            @font-face {
+                font-family: "Regular";
+                src: url('https://raw.githubusercontent.com/MSALAHAH/checkmate.beta/main/fonts/Regular-Medium.woff') format('woff'), url('https://raw.githubusercontent.com/MSALAHAH/checkmate.beta/main/fonts/Regular-Medium.woff2') format('woff2');
+                font-weight: 500;
+                font-style: normal;
+            }
+
+            @font-face {
+                font-family: "Regular";
+                src: url('https://raw.githubusercontent.com/MSALAHAH/checkmate.beta/main/fonts/Regular-Bold.woff') format('woff'), url('https://raw.githubusercontent.com/MSALAHAH/checkmate.beta/main/fonts/Regular-Bold.woff2') format('woff2');
+                font-weight: 700;
+                font-style: normal;
+            } */
+
+                    /* JETBRAINES_FONT */
+            @font-face {
+                font-family: "JetBrains Mono";
+                src: url('https://raw.githubusercontent.com/MSALAHAH/checkmate.beta/main/fonts/JetBrainsMono-Light.woff2') format('woff2');
+                font-weight: 300;
+                font-style: normal;
+            }
+
+            @font-face {
+                font-family: "JetBrains Mono";
+                src: url('https://raw.githubusercontent.com/MSALAHAH/checkmate.beta/main/fonts/JetBrainsMono-Regular.woff2') format('woff2');
+                font-weight: 400;
+                font-style: normal;
+            }
+
+            @font-face {
+                font-family: "JetBrains Mono";
+                src: url('https://raw.githubusercontent.com/MSALAHAH/checkmate.beta/main/fonts/JetBrainsMono-Medium.woff2') format('woff2');
+                font-weight: 500;
+                font-style: normal;
+            }
+
+            @font-face {
+                font-family: "JetBrains Mono";
+                src: url('https://raw.githubusercontent.com/MSALAHAH/checkmate.beta/main/fonts/JetBrainsMono-Bold.woff2') format('woff2');
+                font-weight: 700;
+                font-style: normal;
+            }
+
+
+
+            h1 {
+                margin: 0;
+            }
+
+            ul {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+            }
+
+            a {
+                text-decoration: none;
+            }
+
+
+
+            #docToolSectionBody {
+                background: url('https://raw.githubusercontent.com/MSALAHAH/checkmate.beta/main/attach/blob.svg');
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center center;
+                background-color: #f0f2fc;
+                /* background-image: linear-gradient(to right top, #051937, #057abf, #00a1af, #00d173a8, #057abf); */
+                display: flex;
+                width: 550px;
+                height: 100%;
+                text-align: center;
+                flex-direction: column;
+                align-items: center;
+                border-radius: 20px;
+                box-shadow: 0px 0px 12px 0px #50586f;
+            }
+
+            #headSubject {
+                cursor: pointer;
+                text-align: left;
+                padding: 10px 0px 5px 5px;
+                font-size: 24px;
+                font-weight: 700;
+                line-height: 22px;
+                width: 100%;
+                color: #000;
+                text-shadow: 0px 0px 7px #fff;
+            }
+
+            #headSubjectImg {
+                display: flex;
+                width: 100%;
+                height: 75px;
+                align-items: center;
+            }
+
+            #headSubjectImg img {
+                width: 65px;
+                height: 60px;
+            }
+
+            .headSpan {
+                font-size: 16px;
+            }
+
+            #Divider {
+                width: 230px;
+            }
+
+            #alertMessage {
+                visibility: hidden;
+                min-width: 250px;
+                margin: auto;
+                background-color: rgb(4, 105, 34, 1);
+                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                color: rgb(255, 255, 255);
+                text-align: center;
+                border-radius: 10px;
+                padding: 16px;
+                z-index: 3;
+                font-size: 16px;
+            }
+
+            #alertMessage.show {
+                visibility: visible;
+                -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+                animation: fadein 0.5s, fadeout 0.5s 2.5s;
+            }
+
+            @-webkit-keyframes fadein {
+                from {
+                    bottom: 0;
+                    opacity: 0;
+                }
+
+                to {
+                    bottom: 30px;
+                    opacity: 1;
+                }
+            }
+
+            @keyframes fadein {
+                from {
+                    bottom: 0;
+                    opacity: 0;
+                }
+
+                to {
+                    bottom: 30px;
+                    opacity: 1;
+                }
+            }
+
+            @-webkit-keyframes fadeout {
+                from {
+                    bottom: 30px;
+                    opacity: 1;
+                }
+
+                to {
+                    bottom: 0;
+                    opacity: 0;
+                }
+            }
+
+            @keyframes fadeout {
+                from {
+                    bottom: 30px;
+                    opacity: 1;
+                }
+
+                to {
+                    bottom: 0;
+                    opacity: 0;
+                }
+            }
+
+            .UserInput {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 3% 3% 2% 3%;
+                margin: 2% 2% 0% 2%;
+                box-shadow: 1px 1px 11px 1px rgba(0, 0, 0, 0.48);
+                background: #ffffff5c;
+                border-radius: 6px;
+            }
+
+            #userInput {
+                font-size: 14px;
+                font-weight: bold;
+                font-family: "JetBrains Mono", sans-serif;
+                text-transform: unset;
+                margin-bottom: 3%;
+                border-radius: 8px;
+                border: none;
+                box-shadow: 0px 0px 9px 2px rgb(0 0 0 / 50%);
+                width: 100%;
+                max-width: 100%;
+                height: 100px;
+                min-height: 35px;
+                padding: 8px;
+                overflow: hidden;
+            }
+
+            #updateButton,
+            #clearButton {
+                padding: 5px 8px;
+                font-family: 'Roboto Slab';
+                font-size: 13px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                color: #000;
+                background-color: #fff;
+                border: none;
+                border-radius: 6px;
+                box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.42);
+                cursor: pointer;
+                transition: all 0.1s linear;
+            }
+
+            #updateButton:hover {
+                background-color: #06842c;
+                box-shadow: 0px 0px 11px 0px rgb(245 245 245 / 62%);
+                color: #fff;
+                transform: translateY(-2px);
+            }
+
+            #clearButton:hover {
+                background-color: #d71a1a;
+                box-shadow: 0px 0px 11px 0px rgb(245 245 245 / 62%);
+                color: #fff;
+                transform: translateY(-2px);
+            }
+
+            #checkboxesDiv {
+                width: 80%;
+                font-weight: bold;
+                display: inline-block;
+                text-align: left;
+                text-transform: capitalize;
+                line-height: 28px;
+                padding: 0px 0px 5% 0px;
+            }
+
+
+            #styleBox {
+                width: 365px;
+                border-radius: 8px;
+                box-shadow: 1px 1px 11px 1px rgba(0, 0, 0, 0.48);
+                background: #ffffff5c;
+            }
+
+            .selectionStyle {
+                padding: 7px;
+                box-shadow: 1px 1px 11px 1px rgba(0, 0, 0, 0.568);
+                background: #ffffff5c;
+                border-radius: 6px;
+            }
+
+            .subSelectionStyle {
+                margin-top: 5px;
+                padding: 7px;
+                box-shadow: 1px 1px 11px 1px rgb(0 0 0 / 19%);
+                background: #ffffff29;
+                border-radius: 2px 15px 2px 15px;
+            }
+
+            input[type="checkbox"]:checked+.checkmark {
+                box-shadow: 1px 1px 11px 1px rgba(0, 0, 0, 0.48);
+            }
+
+
+
+
+            .subHeader {
+                text-align: center;
+                margin-top: 5px;
+                margin-bottom: 2px;
+                padding: 1px;
+                box-shadow: inset 1px 1px 4px 1px rgba(0, 0, 0, 0.48);
+                border-radius: 6px;
+            }
+
+
+            #mainCheckbox01Options,
+            #mainCheckbox02Options,
+            #mainCheckbox03Options,
+            #mainCheckbox04Options,
+            #mainCheckbox05Options,
+            #mainCheckbox06Options,
+            #mainCheckbox07Options,
+            #mainCheckbox08Options,
+            #mainCheckbox09Options,
+            #subMainCheckbox0For03Options,
+            #subMainCheckbox1For03Options,
+            #subMainCheckbox2For03Options,
+            #subMainCheckbox3For03Options,
+            #subMainCheckbox4For03Options,
+            #subMainCheckbox0For04Options,
+            #subMainCheckbox1For04Options,
+            #subMainCheckbox2For04Options,
+            #subMainCheckbox3For04Options {
+                margin: 5px 0px 0px 22px;
+            }
+
+            #newCallBtn,
+            #copyBtn {
+                padding: 0.7em 2em;
+                font-family: 'Roboto Slab';
+                font-size: 14px;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                color: #000;
+                background-color: #fff;
+                border: none;
+                border-radius: 10px;
+                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.42);
+                transition: all 0.1s ease 0s;
+                cursor: pointer;
+                outline: none;
+            }
+
+            #newCallBtn:hover,
+            #copyBtn:hover {
+                background-color: #06842c;
+                box-shadow: 0px 0px 20px 3px rgb(253 253 253 / 62%);
+                color: #fff;
+                transform: translateY(-3px);
+            }
+
+            #newCallBtn:active,
+            #copyBtn:active {
+                transform: translateY(-1px);
+            }
+
+            .custom-checkbox {
+                position: relative;
+                padding-left: 30px;
+                cursor: pointer;
+                user-select: none;
+            }
+
+            .custom-checkbox input {
+                position: absolute;
+                opacity: 0;
+                cursor: pointer;
+            }
+
+            .checkmark {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 20px;
+                width: 20px;
+                background-color: #eee;
+                border-radius: 3px;
+                transition: background-color 0.2s ease;
+            }
+
+            .custom-checkbox input:checked~.checkmark {
+                background-color: #06842c;
+                transition: background-color 0.3s ease;
+            }
+
+            .checkmark:after {
+                content: "";
+                position: absolute;
+                display: none;
+            }
+
+            .custom-checkbox input:checked~.checkmark:after {
+                display: block;
+                transition: all 0.3s ease;
+            }
+
+            .custom-checkbox .checkmark:after {
+                left: 7.5px;
+                top: 4.7px;
+                width: 5px;
+                height: 10px;
+                border: solid white;
+                border-width: 0 2px 2px 0;
+                transform: rotate(45deg);
+                transition: all 0.2s ease;
+            }
+
+            #sentence {
+                font-size: 12px;
+                font-family: "JetBrains Mono", sans-serif;
+                font-weight: bold;
+                text-transform: none;
+                border-width: 5px;
+                margin-bottom: 10%;
+                border-style: outset;
+                border-radius: 8px;
+                border: none;
+                box-shadow: inset 0px 0px 10px 5px rgb(0 0 0 / 50%);
+                width: 80%;
+                height: 40%;
+                padding: 18px;
+                overflow: hidden;
+            }
+
+            #controlButton {
+                background-color: #ffffff00;
+                width: 200px;
+                height: 10px;
+                margin: 0px;
+                padding: 1px;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+            }
+
+            #chatBotButton {
+                visibility: hidden;
+                font-family: inherit;
+                font-weight: 600;
+                background-color: #dadafb;
+                margin: 0px;
+                padding: 9px;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+            }
+
+            .footer {
+                position: relative;
+            }
+
+            #iframeContainer2 {
+                display: none;
+                position: absolute;
+                bottom: -260px;
+                animation: fadeIn 0.5s ease-out;
+            }
+
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                }
+
+                to {
+                    opacity: 1;
+                }
+            }
+
+            #chatbotIframe {
+                border-radius: 12px;
+            }
+
+            #iframeContainer {
+                display: none;
+                position: absolute;
+                top: -465%;
+                left: 0;
+                width: 100%;
+                height: 250px;
+                border: 1px solid #ccc;
+                z-index: 999;
+            }
+
+            #footerSpanBold {
+                color: #000000;
+                font-weight: 700;
+            }
+
+            @media (max-width: 320px) {
+                body {
+                    padding-left: 0px;
+                }
+
+                #styleBox {
+                    width: 250px;
+                }
+
+                #checkboxesDiv {
+                    font-size: 14px;
+                    padding: 0px 0px 5% 0px;
+                }
+
+                #newCallBtn,
+                #copyBtn {
+                    font-size: 12px;
+                }
+            }
+
+            @media (max-width: 425px) {
+                body {
+                    padding-left: 0px;
+                }
+
+                #styleBox {
+                    width: 320px;
+                }
+
+                #checkboxesDiv {
+                    font-size: 16px;
+                    padding: 0px 0px 5% 0px;
+                }
+
+                #newCallBtn,
+                #copyBtn {
+                    font-size: 14px;
+                }
+
+                #chatBotButton {
+                    visibility: visible;
+                }
+            }
+
+            @media (max-width: 768px) {
+                body {
+                    padding-left: 0px;
+                }
+
+                #styleBox {
+                    width: 320px;
+                }
+
+                #updateButton,
+                #clearButton {
+                    font-size: 11px;
+                }
+
+                #checkboxesDiv {
+                    font-size: 14px;
+                    padding: 0px 0px 5% 0px;
+                }
+
+                #newCallBtn,
+                #copyBtn {
+                    font-size: 14px;
+                }
+
+                #chatBotButton {
+                    visibility: visible;
+                }
+            }
+
+            @media (min-width: 1440px) {
+
+                #styleBox {
+                    width: 445px;
+                }
+
+                .selectionStyle {
+                    margin: 0% 0% 2% 0%;
+                }
+
+                #checkboxesDiv {
+                    font-size: 20px;
+                    padding: 0px 0px 5% 0px;
+                }
+
+                #newCallBtn,
+                #copyBtn {
+                    font-size: 15px;
+                }
+
+                #chatBotButton {
+                    visibility: visible;
+                }
+            }

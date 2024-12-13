@@ -1,0 +1,206 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* OPTIMUM_FONT */
+@font-face {
+    font-family: "Regular";
+    src: url('https://raw.githubusercontent.com/MSMELOK/checkmate/main/fonts/Regular-Light.woff') format('woff'), url('https://raw.githubusercontent.com/MSMELOK/checkmate/main/fonts/Regular-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Regular";
+    src: url('https://raw.githubusercontent.com/MSMELOK/checkmate/main/fonts/Regular-Regular.woff') format('woff'), url('https://raw.githubusercontent.com/MSMELOK/checkmate/main/fonts/Regular-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Regular";
+    src: url('https://raw.githubusercontent.com/MSMELOK/checkmate/main/fonts/Regular-Medium.woff') format('woff'), url('https://raw.githubusercontent.com/MSMELOK/checkmate/main/fonts/Regular-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Regular";
+    src: url('https://raw.githubusercontent.com/MSMELOK/checkmate/main/fonts/Regular-Bold.woff') format('woff'), url('https://raw.githubusercontent.com/MSMELOK/checkmate/main/fonts/Regular-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+body {
+    font-family: 'Regular', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    padding: 3rem 0rem;
+    justify-content: center;
+}
+
+.container {
+    background-color: white;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 1000px;
+}
+
+header h1 {
+    font-size: 32px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #0092D1; /* Optimum Blue */
+}
+
+h2 {
+    font-size: 24px;
+    color: #34495e; /* Darker gray for subtitles */
+    margin-bottom: 15px;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #bdc3c7;
+    border-radius: 8px;
+    background-color: #ecf0f1; /* Light gray background */
+    margin-bottom: 40px;
+    transition: 0.3s ease;
+}
+
+select:hover {
+    background-color: #fff;
+    border-color: #3498db; /* Light blue border on hover */
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.main-item {
+    font-weight: 500;
+    border-bottom: 1px solid #ccc;
+}
+
+.sub-checklist {
+    margin: 10px 5px 5px 30px; /* Apply margin to sub-checklists */
+    padding-left: 10px;
+    display: none; /* Initially hidden */
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+}
+
+textarea {
+    width: 100%;
+    height: 150px;
+    border-radius: 8px;
+    padding: 20px;
+    font-family: inherit;
+    font-size: 16px;
+    background-color: #ecf0f1; /* Light gray background */
+    border: 1px solid #bdc3c7;
+    resize: none;
+    box-sizing: border-box;
+    transition: 0.3s ease;
+}
+
+textarea:focus {
+    border-color: #3498db; /* Blue border on focus */
+    outline: none;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5); /* Adding shadow for better focus visibility */
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.button {
+    font-family: inherit;
+    font-weight: 700;
+    background-color: #0092D1; /* Optimum Blue */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    width: 48%;
+}
+
+.button:hover {
+    background-color: #007B9D; /* Darker shade of Optimum Blue */
+}
+
+.button:active {
+    transform: scale(0.98);
+}
+
+#new-call-btn{
+    background: #2760f0;
+    border: 2px solid #2760f0;
+    border-radius: 72px;
+    color: #fff;
+    cursor: pointer;
+    padding: 14px 38px;
+}
+
+#new-call-btn:hover{
+    background-color: #dfe7fd;
+    color: #2760f0;
+    border: 2px solid #fff;
+    outline: 2px solid #033091
+}
+
+#copy-btn{
+    background: #f66608;
+    border: 2px solid #f66608;
+    border-radius: 72px;
+    color: #fff;
+    cursor: pointer;
+    padding: 14px 38px;
+}
+
+#copy-btn:hover{
+    background-color: #fcdac4;
+    color: #f66608;
+    border: 2px solid #fff;
+    outline: 2px solid #f66608
+}
+
+.progress-bar {
+    background-color: #ecf0f1; /* Light gray background */
+    border-radius: 8px;
+    height: 20px;
+    width: 100%;
+    overflow: hidden;
+    margin: 5px 0px 20px 0px;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: #6ABF2C; /* Optimum Green */
+    width: 0;
+    transition: width 0.3s ease;
+}

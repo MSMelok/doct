@@ -7,22 +7,24 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Tech support template with main steps and sub-steps
     const techSupportTemplate = [
-        { step: 'Opening', subSteps: ['Greeting', 'Verify identity (First & Last Name)', 'Ask about the issue'] },
-        { step: 'Verification', subSteps: ['Verify Address', 'Best Call Back Number'] },
-        { step: 'Authentication', subSteps: ['STAT/CPNI', 'Authenticate account'] },
-        { step: 'Creating/Preserving Connections', subSteps: ['Check internet connection', 'Ensure device is connected'] },
-        { step: 'Courtesy & Professionalism', subSteps: ['Maintain polite tone', 'Be empathetic'] },
-        { step: 'Relationship Building', subSteps: ['Build rapport', 'Establish customer trust'] },
-        { step: 'Ownership', subSteps: ['Take responsibility for the issue', 'Ensure timely follow-up'] },
-        { step: 'Tool utilization', subSteps: ['Open troubleshooting tools', 'Run diagnostics'] },
-        { step: 'Appointment Management', subSteps: ['Schedule follow-up', 'Confirm appointment details'] },
-        { step: 'Credit', subSteps: ['Verify account credits', 'Apply credits if needed'] },
-        { step: 'Upselling', subSteps: ['Offer additional services', 'Provide product recommendations'] },
-        { step: 'Account Management/Modification', subSteps: ['Update account details', 'Resolve account issues'] },
-        { step: 'Escalation Policy Adherence', subSteps: ['Follow escalation procedure', 'Transfer to senior agent if needed'] },
-        { step: 'Lost Call', subSteps: ['Attempt to reconnect', 'Log incident details'] },
-        { step: 'Account Documentation', subSteps: ['Log all actions taken', 'Record troubleshooting steps'] },
-        { step: 'Closing', subSteps: ['Confirm resolution', 'Ask if the customer needs further help'] }
+        { step: 'Opening', subSteps: [
+            { label: 'Greeting', summary: '' }, 
+            { label: 'Verify identity (First & Last Name)', summary: 'Customer identity was verified' }, 
+            { label: 'Ask about the issue', summary: 'The customer explained the issue' }
+        ]},
+        { step: 'Verification', subSteps: [
+            { label: 'Verify Address', summary: 'Customer address was verified' },
+            { label: 'Best Call Back Number', summary: 'Best call back number was confirmed' }
+        ]},
+        { step: 'Authentication', subSteps: [
+            { label: 'STAT/CPNI', summary: 'STAT/CPNI authentication was done' }, 
+            { label: 'Authenticate account', summary: 'Account authentication was successful' }
+        ]},
+        { step: 'Creating/Preserving Connections', subSteps: [
+            { label: 'Check internet connection', summary: 'Internet connection was checked' }, 
+            { label: 'Ensure device is connected', summary: 'Device connection was confirmed' }
+        ]},
+        // More steps here as needed...
     ];
 
     // Function to populate the checklist
@@ -37,8 +39,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 <ul class="sub-checklist" id="sub-${index}" style="display: none;">
                     ${item.subSteps.map((subStep, subIndex) => `
                         <li>
-                            <input type="checkbox" id="sub-step-${index}-${subIndex}" class="sub-checkbox">
-                            <label for="sub-step-${index}-${subIndex}">${subStep}</label>
+                            <input type="checkbox" id="sub-step-${index}-${subIndex}" class="sub-checkbox" data-summary="${subStep.summary}">
+                            <label for="sub-step-${index}-${subIndex}">${subStep.label}</label>
                         </li>
                     `).join('')}
                 </ul>
@@ -72,13 +74,24 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Update summary text area based on checked items
     function updateSummary() {
-        const checkedItems = document.querySelectorAll('input[type="checkbox"]:checked');
         let summary = '';
-        checkedItems.forEach(item => {
-            const label = item.nextElementSibling.textContent;
-            summary += `${label}\n`;
+        
+        // Loop through all the sub-checkboxes and check their state
+        const subCheckboxes = document.querySelectorAll('.sub-checkbox');
+        subCheckboxes.forEach(subCheckbox => {
+            const subSummary = subCheckbox.getAttribute('data-summary');
+            // Only add non-empty summaries to the summary
+            if (subCheckbox.checked && subSummary.trim() !== '') {
+                // If summary is not empty, add the value with " - " separator
+                if (summary !== '') {
+                    summary += ' - ';
+                }
+                summary += subSummary;
+            }
         });
-        summaryTextArea.value = summary;
+
+        // Update the summary textarea with the new content
+        summaryTextArea.value = summary.trim(); // Remove the last empty space if any
         updateProgressBar();
     }
 
@@ -97,7 +110,15 @@ document.addEventListener("DOMContentLoaded", function() {
     copyButton.addEventListener('click', function() {
         summaryTextArea.select();
         document.execCommand('copy');
-        alert('Documentation copied to clipboard!');
+        
+        // Show the success message
+        const copyMessage = document.getElementById('copy-message');
+        copyMessage.classList.add('show');
+
+        // Hide the success message after 3 seconds
+        setTimeout(function() {
+            copyMessage.classList.remove('show');
+        }, 3000);
     });
 
     // New Call button functionality

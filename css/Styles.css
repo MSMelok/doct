@@ -36,6 +36,10 @@
 
 
 body {
+    background-image: url('/attach/optimumBg.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
     font-family: 'Regular', sans-serif;
     background-color: #f4f4f4;
     color: #333;
@@ -57,8 +61,8 @@ header h1 {
     font-size: 32px;
     font-weight: 600;
     text-align: center;
-    margin-bottom: 40px;
-    color: #0092D1; /* Optimum Blue */
+    margin-bottom: 10px;
+    color: #002864; /* Optimum Blue */
 }
 
 h2 {
@@ -111,12 +115,12 @@ input[type="checkbox"] {
 
 textarea {
     width: 100%;
-    height: 150px;
+    height: 200px;
     border-radius: 8px;
-    padding: 20px;
+    padding: 15px;
     font-family: inherit;
     font-size: 16px;
-    background-color: #ecf0f1; /* Light gray background */
+    background-color: #ecf0f1;
     border: 1px solid #bdc3c7;
     resize: none;
     box-sizing: border-box;
@@ -147,6 +151,7 @@ textarea:focus {
     cursor: pointer;
     transition: 0.3s ease;
     width: 48%;
+    box-shadow: 0px 4px 6px 0px rgb(0 0 0 / 39%);
 }
 
 .button:hover {
@@ -192,16 +197,43 @@ textarea:focus {
 .progress-bar {
     background-color: #ecf0f1;
     border-radius: 8px;
-    height: 20px;
+    height: 5px;
     width: 100%;
     overflow: hidden;
-    margin: 5px 0px 20px 0px;
+    margin: 5px 0px 30px 0px;
     outline: 1px solid #98b8ff;
 }
 
 .progress-fill {
     height: 100%;
-    background-color: #30b32b;
+    background-color: #267723;
     width: 0;
     transition: width 0.3s ease;
 }
+
+.copy-message {
+    display: none;
+    background-color: #267723; 
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-align: center;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 1s ease-out;
+    box-shadow: 2px 5px 10px 1px rgba(0, 0, 0, 0.3); 
+}
+
+.copy-message.show {
+    display: block;
+    opacity: 1;
+    transition: opacity 1s ease-in;
+}
+
+

@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Optimum Tech Support - DocT</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="16x16"
-        href="./attach/icon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./attach/icon.png">
     <link rel="stylesheet" href="./css/Styles.css">
 </head>
 <body>
@@ -16,7 +14,6 @@
         </header>
 
         <section class="progress">
-            <h3>Progress</h3>
             <div id="progress-bar" class="progress-bar">
                 <div class="progress-fill"></div>
             </div>
@@ -25,7 +22,24 @@
         <section class="call-flow">
             <h2>Call Steps</h2>
             <ul id="checklist">
-                <!-- Checklist items will be dynamically inserted here -->
+                <!-- Example Main Checklist Item -->
+                <li class="main-item">
+                    <input type="checkbox" class="main-checkbox"> Main Checklist Item 1
+                    <ul class="sub-checklist">
+                        <li><input type="checkbox" class="sub-checkbox"> Sub Item 1.1</li>
+                        <li><input type="checkbox" class="sub-checkbox"> Sub Item 1.2</li>
+                    </ul>
+                </li>
+                
+                <li class="main-item">
+                    <input type="checkbox" class="main-checkbox"> Main Checklist Item 2
+                    <ul class="sub-checklist">
+                        <li><input type="checkbox" class="sub-checkbox"> Sub Item 2.1</li>
+                        <li><input type="checkbox" class="sub-checkbox"> Sub Item 2.2</li>
+                    </ul>
+                </li>
+
+                <!-- Additional Main Checklist Items can be dynamically inserted here -->
             </ul>
         </section>
 
@@ -39,6 +53,9 @@
             <button id="new-call-btn" class="button">New Call</button>
         </section>
 
+        <div id="copy-message" class="copy-message">
+            Summary Copied Successfully!
+        </div>
     </div>
 
     <script src="./JavaScript/Script.js"></script>

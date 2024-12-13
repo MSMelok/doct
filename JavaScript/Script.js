@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
             <h1 id="welcodeHeader">Welcome to My Humble Tool!</h1>
             <p>I'm glad to have you here.❤</p>
             <br>
-            <q>Coded By E31618</q>
+            <h1>Loading...</h1>
         </div>
     `;
     document.body.appendChild(welcomeOverlay);

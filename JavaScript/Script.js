@@ -1,4 +1,28 @@
 document.addEventListener("DOMContentLoaded", function() {
+    // Add code for welcome page
+    const welcomeOverlay = document.createElement('div');
+    welcomeOverlay.id = 'welcome-overlay';
+    welcomeOverlay.classList.add('welcome-overlay');
+    welcomeOverlay.innerHTML = `
+        <div class="welcome-content">
+            <h1 id="welcodeHeader">Welcome to My Humble Tool!</h1>
+            <p>I'm glad to have you here.❤</p>
+            <br>
+            <q>Coded By E31618</q>
+        </div>
+    `;
+    document.body.appendChild(welcomeOverlay);
+
+    // Function to hide the welcome overlay after 5 seconds
+    setTimeout(function() {
+        welcomeOverlay.classList.add('fade-out'); // Add the fade-out class for smooth transition
+        setTimeout(function() {
+            welcomeOverlay.style.display = 'none'; // Hide the welcome overlay after fade-out
+        }, 1000); // Wait for fade-out transition to finish
+    }, 3000); // Show for 5 seconds
+
+    // Existing code continues here
+
     const checklistContainer = document.getElementById('checklist');
     const summaryTextArea = document.getElementById('summary');
     const progressBarFill = document.querySelector('.progress-fill');

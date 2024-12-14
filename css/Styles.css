@@ -189,7 +189,7 @@ textarea:focus {
     margin-top: 20px;
 }
 
-button {
+.button {
     font-family: inherit;
     font-weight: 700;
     background: #fff;
@@ -204,12 +204,12 @@ button {
     box-shadow: 0px 4px 6px 0px rgb(0 0 0 / 39%);
 }
 
-button:hover {
+.button:hover {
     color: #fff;
     background: linear-gradient(101deg, rgba(216, 104, 131, 1) 0%, rgba(142, 38, 117, 1) 100%);
 }
 
-button:active {
+.button:active {
     transform: scale(0.98);
 }
 

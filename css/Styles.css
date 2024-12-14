@@ -61,7 +61,7 @@ header h1 {
     font-weight: 600;
     text-align: center;
     margin-bottom: 10px;
-    color: #002864; /* Optimum Blue */
+    color: #4A3283; /* Optimum Blue */
 }
 
 h2 {
@@ -69,6 +69,57 @@ h2 {
     color: #34495e; /* Darker gray for subtitles */
     margin-bottom: 15px;
 }
+
+/* Notes Section Styling */
+.notes {
+    margin: 10px 0 20px;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.notes h2 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    color: #333;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#noteInput {
+    width: 100%;
+    height: 100px;
+    resize: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+    box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.05);
+    transition: border-color 0.3s ease;
+}
+
+#noteInput:focus {
+    border-color: #4caf50;
+    outline: none;
+}
+
+#addNoteBtn {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    font-weight: bold;
+    color: white;
+    background: #fff;
+    border: 1px solid #4A3283;
+    color: #4A3283;
+    border-radius: 25px;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
 
 select {
     width: 100%;
@@ -83,7 +134,7 @@ select {
 
 select:hover {
     background-color: #fff;
-    border-color: #3498db; /* Light blue border on hover */
+    border-color: #4A3283; /* Light blue border on hover */
 }
 
 ul {
@@ -127,7 +178,7 @@ textarea {
 }
 
 textarea:focus {
-    border-color: #3498db; /* Blue border on focus */
+    border-color: #4A3283; /* Blue border on focus */
     outline: none;
     box-shadow: 0 0 5px rgba(52, 152, 219, 0.5); /* Adding shadow for better focus visibility */
 }
@@ -138,60 +189,30 @@ textarea:focus {
     margin-top: 20px;
 }
 
-.button {
+button {
     font-family: inherit;
     font-weight: 700;
-    background-color: #0092D1; /* Optimum Blue */
-    color: white;
-    border: none;
-    border-radius: 8px;
+    background: #fff;
+    border: 1px solid #4A3283;
+    color: #4A3283;
+    border-radius: 25px;
     padding: 12px 20px;
     font-size: 16px;
     cursor: pointer;
-    transition: 0.3s ease;
+    transition: 0.4s ease;
     width: 48%;
     box-shadow: 0px 4px 6px 0px rgb(0 0 0 / 39%);
 }
 
-.button:hover {
-    background-color: #007B9D; /* Darker shade of Optimum Blue */
+button:hover {
+    color: #fff;
+    background: linear-gradient(101deg, rgba(216, 104, 131, 1) 0%, rgba(142, 38, 117, 1) 100%);
 }
 
-.button:active {
+button:active {
     transform: scale(0.98);
 }
 
-#new-call-btn{
-    background: #2760f0;
-    border: 2px solid #2760f0;
-    border-radius: 72px;
-    color: #fff;
-    cursor: pointer;
-    padding: 14px 38px;
-}
-
-#new-call-btn:hover{
-    background-color: #dfe7fd;
-    color: #2760f0;
-    border: 2px solid #fff;
-    outline: 2px solid #033091
-}
-
-#copy-btn{
-    background: #f66608;
-    border: 2px solid #f66608;
-    border-radius: 72px;
-    color: #fff;
-    cursor: pointer;
-    padding: 14px 38px;
-}
-
-#copy-btn:hover{
-    background-color: #fcdac4;
-    color: #f66608;
-    border: 2px solid #fff;
-    outline: 2px solid #f66608
-}
 
 .progress-bar {
     background-color: #ecf0f1;
@@ -235,11 +256,12 @@ textarea:focus {
     transition: opacity 1s ease-in;
 }
 
+
 .site-footer {
     font-family: inherit;
     text-align: center;
     padding: 10px;
-    background-color: #033091;
+    background-color: #EA297C;
     color: #fff;
     position: fixed;
     bottom: 0;
@@ -250,6 +272,10 @@ textarea:focus {
 footer a {
     color: inherit;
     text-decoration: none;
+}
+
+footer a:hover {
+    color: #3ea0f0;
 }
 
 

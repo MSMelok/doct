@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
         setTimeout(function() {
             welcomeOverlay.style.display = 'none'; // Hide the welcome overlay after fade-out
         }, 1000); // Wait for fade-out transition to finish
-    }, 3000); // Show for 5 seconds
+    }, 1000); // Show for 5 seconds
 
     // Existing code continues here
 

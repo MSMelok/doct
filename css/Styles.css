@@ -57,7 +57,7 @@ body {
 }
 
 header h1 {
-    font-size: 32px;
+    font-size: 22px;
     font-weight: 600;
     text-align: center;
     margin-bottom: 10px;
@@ -65,7 +65,7 @@ header h1 {
 }
 
 h2 {
-    font-size: 24px;
+    font-size: 18px;
     color: #34495e; /* Darker gray for subtitles */
     margin-bottom: 15px;
 }
@@ -143,15 +143,17 @@ ul {
 
 li {
     margin-bottom: 20px;
-    font-size: 18px;
+    font-size: 14px;
 }
 
 .main-item {
+    font-size: 16px;
     font-weight: 500;
     border-bottom: 1px solid #ccc;
 }
 
 .sub-checklist {
+    font-size: 14px;
     margin: 10px 5px 5px 30px; /* Apply margin to sub-checklists */
     padding-left: 10px;
     display: none; /* Initially hidden */
@@ -258,15 +260,15 @@ textarea:focus {
 
 
 .site-footer {
+    font-size: 12px;
     font-family: inherit;
     text-align: center;
-    padding: 10px;
+    padding: 5px;
     background-color: #EA297C;
     color: #fff;
     position: fixed;
     bottom: 0;
     width: 100%;
-    font-size: 14px;
 }
 
 footer a {

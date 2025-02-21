@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Support Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="./img/favicon.png">
+</head>
+<body>
+    <div class="app">
+        <header class="header">
+            <div class="header-content">
+                <div class="title-section">
+                    <h1 class="title">Tech Support Dashboard</h1>
+                    <div class="header-utils">
+                        <div class="clock" id="clock"></div>
+                        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                            <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                            </svg>
+                            <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="display: none;">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="search-container">
+                    <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                    </svg>
+                    <input type="text" id="searchInput" class="search-input" placeholder="Search tools, forms, and resources..." autocomplete="off">
+                </div>
+            </div>
+        </header>
+
+        <main class="main">
+            <div class="categories">
+                <button class="category-btn active" data-category="all">All Tools</button>
+                <button class="category-btn" data-category="Communication">Communication</button>
+                <button class="category-btn" data-category="Tools">Tools</button>
+                <button class="category-btn" data-category="Forms">Forms</button>
+                <button class="category-btn" data-category="Support">Support</button>
+                <button class="category-btn" data-category="Resources">Resources</button>
+            </div>
+
+            <div class="grid">
+                <!-- Communication -->
+                <div class="card" data-category="Communication">
+                    <a href="https://altparplfinp4.cvcauth.com/desktop/container/landing.jsp?locale=en_US" target="_blank">
+                        <div class="card-icon">
+                            <img src="./img/cisco.png" alt="Cisco">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-title">Cisco</div>
+                            <div class="card-category">Communication</div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Email -->
+                <div class="card" data-category="Communication">
+                    <a href="https://outlook.office365.com/mail/" target="_blank">
+                        <div class="card-icon">
+                            <img src="./img/Outlook.png" alt="Outlook">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-title">Outlook | @AlticeUSA</div>
+                            <div class="card-category">Email</div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="card" data-category="Communication">
+                    <a href="https://mail.google.com/" target="_blank">
+                        <div class="card-icon">
+                            <img src="./img/gmail.png" alt="Outlook">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-title">Gmail | @Intelcia</div>
+                            <div class="card-category">Email</div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Tools -->
+                <div class="card" data-category="Tools">
+                    <a href="https://lightspeed.alticeusa.net/" target="_blank">
+                        <div class="card-icon">
+                            <img src="./img/flash.png" alt="Lightspeed">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-title">Lightspeed</div>
+                            <div class="card-category">Network Tools</div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="card" data-category="Tools">
+                    <a href="https://packetping.sdl.alticeusa.net/" target="_blank">
+                        <div class="card-icon">
+                            <img src="./img/PingIp.png" alt="PingPool">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-title">PingPool | WEST</div>
+                            <div class="card-category">Network Tools</div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="card" data-category="Tools">
+                    <a href="https://care-ava.lbl.gcp.alticeusa.com/" target="_blank">
+                        <div class="card-icon">
+                            <img src="./img/AVA_LOGO.png" alt="AVA Care">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-title">AVA Care</div>
+                            <div class="card-category">Support Tools</div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Support -->
+        
+                <!-- Forms -->
+                <div class="card" data-category="Forms">
+                    <a href="https://forms.office.com/pages/responsepage.aspx?id=wF1Tz_xz6kGhdBfzfO1_53DO5iDuLppIraEJz6tZcBBUMDZOSDMzRldIRkdBTDhWWkFBWTY2NEQ2SC4u&route=shorturl" target="_blank">
+                        <div class="card-icon">
+                            <img src="./img/form.png" alt="Mobile Pitch">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-title">Mobile Pitch & Transfer</div>
+                            <div class="card-category">Forms</div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Tools -->
+                <div class="card" data-category="Tools">
+                    <a href="https://whaui.cablevision.com/WHAUI/" target="_blank">
+                        <div class="card-icon">
+                            <img src="./img/activation.png" alt="WHA">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-title">WHA Activation</div>
+                            <div class="card-category">Tools</div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Schedule -->
+                <div class="card" data-category="Tools">
+                    <a href="https://altbthpwwfcem01.cvcauth.com/WFO/" target="_blank">
+                        <div class="card-icon">
+                            <img src="./img/WFO.webp" alt="WFO Schedule">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-title">WFO Schedule</div>
+                            <div class="card-category">Schedule</div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Forms -->
+                <div class="card" data-category="Forms">
+                    <a href="https://forms.office.com/pages/responsepage.aspx?id=wF1Tz_xz6kGhdBfzfO1_5znjfN9_qpNNgXiWBMskmVRURUlaWU41SVNPWUVTTlEzN0YwSFoyOVhMQy4u&origin=lprLink&route=shorturl" target="_blank">
+                        <div class="card-icon">
+                            <img src="./img/form.png" alt="Break Move">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-title">Break Move Form</div>
+                            <div class="card-category">Forms</div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="card" data-category="Forms">
+                    <a href="https://forms.office.com/r/uiutnqJGbE" target="_blank">
+                        <div class="card-icon">
+                            <img src="./img/form.png" alt="Customer Callback">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-title">Customer Call Back</div>
+                            <div class="card-category">Forms</div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="card" data-category="Forms">
+                    <a href="https://forms.office.com/pages/responsepage.aspx?id=wF1Tz_xz6kGhdBfzfO1_59OViV555ClLpsvNeEFIrvJUNU1SOEhZRlU2QTJUR1VXWEk3NEZVQU1OUi4u&route=shorturl" target="_blank">
+                        <div class="card-icon">
+                            <img src="./img/form.png" alt="Fiber Transfer">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-title">Fiber Transfer Form</div>
+                            <div class="card-category">Forms</div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Tools -->
+                <div class="card" data-category="Tools">
+                    <a href="https://dnschecker.org/mac-lookup.php" target="_blank">
+                        <div class="card-icon">
+                            <img src="./img/macAdd.png" alt="MAC Lookup">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-title">MAC Address Lookup</div>
+                            <div class="card-category">Network Tools</div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Support -->
+                <div class="card" data-category="Support">
+                    <a href="https://customerexperience.optimum.com/homepage/ui" target="_blank">
+                        <div class="card-icon">
+                            <img src="./img/OSATfavicon.jpeg" alt="OSAT">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-title">Qualtrics OSAT</div>
+                            <div class="card-category">Support</div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Resources -->
+                <div class="card" data-category="Resources">
+                    <a href="https://www.optimum.com/stores/" target="_blank">
+                        <div class="card-icon">
+                            <img src="./img/Optimum.png" alt="Stores">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-title">Store Locations</div>
+                            <div class="card-category">Resources</div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="card" data-category="Tools">
+                    <a href="https://kslink.me/f/41608935/1285/" target="_blank">
+                        <div class="card-icon">
+                            <img src="./img/Optimum.png" alt="Gift Cards">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-title">Gift Card Tracker</div>
+                            <div class="card-category">Tools</div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="card" data-category="Resources">
+                    <a href="https://www.optimum.net/pages/tv/tv-remote.html" target="_blank">
+                        <div class="card-icon">
+                            <img src="./img/Optimum.png" alt="Remote">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-title">Remote Programming</div>
+                            <div class="card-category">Resources</div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="card" data-category="Resources">
+                    <a href="https://www.optimum.net/pages/channel-lineups.html" target="_blank">
+                        <div class="card-icon">
+                            <img src="./img/Optimum.png" alt="Channels">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-title">Channel Lineups</div>
+                            <div class="card-category">Resources</div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="card" data-category="Resources">
+                    <a href="https://publish.acho.io/0ba8659b-f3ca-4566-be07-ae80b1aa8476/home" target="_blank">
+                        <div class="card-icon">
+                            <img src="./img/Optimum.png" alt="Packages">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-title">Package Comparison</div>
+                            <div class="card-category">Resources</div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="card" data-category="Tools">
+                    <a href="https://www.optimum.com/mobile/plan/savings-calculator" target="_blank">
+                        <div class="card-icon">
+                            <img src="./img/Optimum.png" alt="Calculator">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-title">Mobile Calculator</div>
+                            <div class="card-category">Tools</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>Designed & Developed by <a href="https://msmelok.github.io/R4_2.0" target="_blank">Muhammad Meluk</a></p>
+        </footer>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

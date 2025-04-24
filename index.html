@@ -1,30 +1,32 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-427EN7ZQVS"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-427EN7ZQVS');
-</script>
+    <!-- Google tag (gtag.js) Start -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-427EN7ZQVS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-427EN7ZQVS');
+    </script>
+    <!-- Google tag (gtag.js) End -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tech Support Dashboard</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="./img/accessability.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="app">
-        <header class="header">
+        <div class="glass-overlay"></div>
+        <header class="header glass">
             <div class="header-content">
                 <div class="title-section">
                     <h1 class="title">Tech Support Dashboard</h1>
                     <div class="header-utils">
                         <div class="clock" id="clock"></div>
-                        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                        <button class="theme-toggle glass-button" id="theme-toggle" aria-label="Toggle dark mode">
                             <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
                             </svg>
@@ -34,7 +36,7 @@
                         </button>
                     </div>
                 </div>
-                <div class="search-container">
+                <div class="search-container glass-field">
                     <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
                     </svg>
@@ -44,13 +46,16 @@
         </header>
 
         <main class="main">
-            <div class="categories">
-                <button class="category-btn active" data-category="all">All Tools</button>
-                <button class="category-btn" data-category="DU">Daily Used</button>
+            <div class="dashboard-controls glass">
+                <div class="categories">
+                    <button class="category-btn active" data-category="all">All Tools</button>
+                    <button class="category-btn" data-category="DU">Daily Used</button>
+                </div>
             </div>
 
-            <div class="grid">
-                <div class="card" data-category="DU">
+            <div class="grid" id="toolsGrid">
+                <!-- Cards -->
+                <div class="card glass" data-category="DU">
                     <a href="https://altparplfinp4.cvcauth.com/desktop/container/landing.jsp?locale=en_US" target="_blank">
                         <div class="card-icon">
                             <img src="./img/cisco.png" alt="Cisco">
@@ -62,8 +67,7 @@
                     </a>
                 </div>
 
-                <!-- Email -->
-                <div class="card" data-category="DU">
+                <div class="card glass" data-category="DU">
                     <a href="https://outlook.office365.com/mail/" target="_blank">
                         <div class="card-icon">
                             <img src="./img/Outlook.png" alt="Outlook">
@@ -75,7 +79,7 @@
                     </a>
                 </div>
 
-                <div class="card" data-category="DU">
+                <div class="card glass" data-category="DU">
                     <a href="https://lightspeed.alticeusa.net/" target="_blank">
                         <div class="card-icon">
                             <img src="./img/flash.png" alt="Lightspeed">
@@ -87,7 +91,7 @@
                     </a>
                 </div>
 
-                <div class="card" data-category="DU">
+                <div class="card glass" data-category="DU">
                     <a href="https://care-ava.lbl.gcp.alticeusa.com/" target="_blank">
                         <div class="card-icon">
                             <img src="./img/AVA_LOGO.png" alt="AVA Care">
@@ -99,7 +103,7 @@
                     </a>
                 </div>
 
-                <div class="card" data-category="DU">
+                <div class="card glass" data-category="DU">
                     <a href="https://forms.office.com/pages/responsepage.aspx?id=wF1Tz_xz6kGhdBfzfO1_53DO5iDuLppIraEJz6tZcBBUMDZOSDMzRldIRkdBTDhWWkFBWTY2NEQ2SC4u&route=shorturl" target="_blank">
                         <div class="card-icon">
                             <img src="./img/form.png" alt="Mobile Pitch">
@@ -111,7 +115,7 @@
                     </a>
                 </div>
 
-                <div class="card" data-category="DU">
+                <div class="card glass" data-category="DU">
                     <a href="https://forms.office.com/pages/responsepage.aspx?id=wF1Tz_xz6kGhdBfzfO1_5znjfN9_qpNNgXiWBMskmVRURUlaWU41SVNPWUVTTlEzN0YwSFoyOVhMQy4u&origin=lprLink&route=shorturl" target="_blank">
                         <div class="card-icon">
                             <img src="./img/form.png" alt="Break Move">
@@ -123,7 +127,7 @@
                     </a>
                 </div>
 
-                <div class="card" data-category="DU">
+                <div class="card glass" data-category="DU">
                     <a href="https://www.optimum.com/stores/" target="_blank">
                         <div class="card-icon">
                             <img src="./img/Optimum.png" alt="Stores">
@@ -135,7 +139,7 @@
                     </a>
                 </div>
 
-                <div class="card" data-category="DU">
+                <div class="card glass" data-category="DU">
                     <a href="https://kdb.cablevision.com/SharedFiles/Files/includes/fiber-e2e/v.4/story.html" target="_blank">
                         <div class="card-icon">
                             <img src="./img/E2E.png" alt="E2E Fiber Deal">
@@ -147,7 +151,7 @@
                     </a>
                 </div>
 
-                <div class="card" data-category="DU">
+                <div class="card glass" data-category="DU">
                     <a href="https://optimum.ausaqaconnect.com/TransmonAltice/Login" target="_blank">
                         <div class="card-icon">
                             <img src="./img/QA-Feedback.png" alt="QA Evaluation Feedback Tool">
@@ -159,7 +163,7 @@
                     </a>
                 </div>
 
-                <div class="card" data-category="DU">
+                <div class="card glass" data-category="DU">
                     <a href="https://www.optimum.com/mobile/plan/savings-calculator" target="_blank">
                         <div class="card-icon">
                             <img src="./img/Optimum.png" alt="Calculator">
@@ -171,7 +175,7 @@
                     </a>
                 </div>
 
-                <div class="card">
+                <div class="card glass">
                     <a href="https://mail.google.com/" target="_blank">
                         <div class="card-icon">
                             <img src="./img/gmail.png" alt="Outlook">
@@ -183,7 +187,7 @@
                     </a>
                 </div>                
 
-                <div class="card">
+                <div class="card glass">
                     <a href="https://packetping.sdl.alticeusa.net/" target="_blank">
                         <div class="card-icon">
                             <img src="./img/PingIp.png" alt="PingPool">
@@ -195,7 +199,7 @@
                     </a>
                 </div>
 
-                <div class="card">
+                <div class="card glass">
                     <a href="http://vip-bluegatewayapi.cablevision.com:8080/CPEGatewayUI/" target="_blank">
                         <div class="card-icon">
                             <img src="./img/bluePage.png" alt="Blue-Page">
@@ -207,7 +211,7 @@
                     </a>
                 </div>
 
-                <div class="card">
+                <div class="card glass">
                     <a href="https://boost.cablevision.com/boost2/searchAction.do" target="_blank">
                         <div class="card-icon">
                             <img src="./img/Boost.png" alt="Boost">
@@ -219,7 +223,7 @@
                     </a>
                 </div>
 
-                <div class="card">
+                <div class="card glass">
                     <a href="https://kdb.cablevision.com/KDB/jsp/CDA/HomePage.jsp" target="_blank">
                         <div class="card-icon">
                             <img src="./img/kdb.png" alt="TRIO-OV">
@@ -231,7 +235,7 @@
                     </a>
                 </div>
 
-                <div class="card">
+                <div class="card glass">
                     <a href="http://ov/TRiOLogin" target="_blank">
                         <div class="card-icon">
                             <img src="./img/Trio-OV.png" alt="TRIO-OV">
@@ -243,7 +247,7 @@
                     </a>
                 </div>
 
-                <div class="card">
+                <div class="card glass">
                     <a href="https://www.fedex.com/en-us/home.html" target="_blank">
                         <div class="card-icon">
                             <img src="./img/fedexLogo.png" alt="FedEx">
@@ -255,9 +259,7 @@
                     </a>
                 </div>
 
-            
-                <!-- Support -->
-                <div class="card">
+                <div class="card glass">
                     <a href="https://tableau.cablevision.com/" target="_blank">
                         <div class="card-icon">
                             <img src="./img/Tableau.png" alt="Tableau">
@@ -269,8 +271,7 @@
                     </a>
                 </div>
         
-                <!-- Tools -->
-                <div class="card">
+                <div class="card glass">
                     <a href="https://whaui.cablevision.com/WHAUI/" target="_blank">
                         <div class="card-icon">
                             <img src="./img/activation.png" alt="WHA">
@@ -282,8 +283,7 @@
                     </a>
                 </div>
 
-                <!-- Schedule -->
-                <div class="card">
+                <div class="card glass">
                     <a href="https://altbthpwwfcem01.cvcauth.com/WFO/" target="_blank">
                         <div class="card-icon">
                             <img src="./img/WFO.webp" alt="WFO Schedule">
@@ -295,7 +295,7 @@
                     </a>
                 </div>
 
-                <div class="card">
+                <div class="card glass">
                     <a href="https://msmelok.github.io/box-mate/" target="_blank">
                         <div class="card-icon">
                             <img src="./img/byMo.png" alt="BoxMate">
@@ -307,19 +307,7 @@
                     </a>
                 </div>
 
-<!--                 <div class="card">
-                    <a href="https://msmelok.github.io/hero/" target="_blank">
-                        <div class="card-icon">
-                            <img src="./img/byMo.png" alt="Quality Checklist">
-                        </div>
-                        <div class="card-content">
-                            <div class="card-title">Quality Checklist</div>
-                            <div class="card-category">Network Tools</div>
-                        </div>
-                    </a>
-                </div> -->
-
-                <div class="card">
+                <div class="card glass">
                     <a href="https://msmelok.github.io/convert/" target="_blank">
                         <div class="card-icon">
                             <img src="./img/byMo.png" alt="Time Converter">
@@ -331,7 +319,7 @@
                     </a>
                 </div>
 
-                <div class="card">
+                <div class="card glass">
                     <a href="https://msmelok.github.io/doc/" target="_blank">
                         <div class="card-icon">
                             <img src="./img/byMo.png" alt="Doc Tool">
@@ -343,7 +331,7 @@
                     </a>
                 </div>
 
-                <div class="card">
+                <div class="card glass">
                     <a href="https://msmelok.github.io/pair-remote/" target="_blank">
                         <div class="card-icon">
                             <img src="./img/byMo.png" alt="Pair Remote">
@@ -355,7 +343,7 @@
                     </a>
                 </div>
 
-                <div class="card">
+                <div class="card glass">
                     <a href="https://macaddress.io/" target="_blank">
                         <div class="card-icon">
                             <img src="./img/macAdd.png" alt="MAC Lookup">
@@ -367,8 +355,7 @@
                     </a>
                 </div>
 
-                <!-- Support -->
-                <div class="card">
+                <div class="card glass">
                     <a href="https://customerexperience.optimum.com/homepage/ui" target="_blank">
                         <div class="card-icon">
                             <img src="./img/OSATfavicon.jpeg" alt="OSAT">
@@ -380,7 +367,7 @@
                     </a>
                 </div>
 
-                <div class="card">
+                <div class="card glass">
                     <a href="https://kslink.me/f/41608935/1285/" target="_blank">
                         <div class="card-icon">
                             <img src="./img/Optimum.png" alt="Gift Cards">
@@ -392,7 +379,7 @@
                     </a>
                 </div>
 
-                <div class="card">
+                <div class="card glass">
                     <a href="https://www.optimum.net/pages/tv/tv-remote.html" target="_blank">
                         <div class="card-icon">
                             <img src="./img/Optimum.png" alt="Remote">
@@ -404,7 +391,7 @@
                     </a>
                 </div>
 
-                <div class="card">
+                <div class="card glass">
                     <a href="https://www.optimum.net/pages/channel-lineups.html" target="_blank">
                         <div class="card-icon">
                             <img src="./img/Optimum.png" alt="Channels">
@@ -416,7 +403,7 @@
                     </a>
                 </div>
 
-                <div class="card">
+                <div class="card glass">
                     <a href="https://publish.acho.io/0ba8659b-f3ca-4566-be07-ae80b1aa8476/home" target="_blank">
                         <div class="card-icon">
                             <img src="./img/Optimum.png" alt="Packages">
@@ -427,13 +414,70 @@
                         </div>
                     </a>
                 </div>
-
             </div>
         </main>
 
-        <footer class="footer">
-            <p>Designed & Developed by <a href="https://msmelok.github.io/R4_2.0" target="_blank">Muhammad Meluk</a></p>
+        <footer class="footer glass">
+            <p>Designed and Coded by <span>Muhammad Meluk</span></p>
         </footer>
+
+        <!-- Floating Button (NEW) -->
+        <button id="info-button" class="floating-button info-button glass-button" aria-label="Information">
+            <i class="fas fa-info"></i>
+            <span class="tooltip">Tool Info</span>
+        </button>
+
+        <!-- Info Modal (NEW) -->
+        <div id="info-modal-overlay" class="modal-overlay hidden">
+            <div id="info-modal" class="info-modal glass">
+                <button id="close-modal" class="close-modal" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+                
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title">About this Tool</h2>
+                    </div>
+                    
+                    <div class="modal-body">
+                        <div class="tool-info">
+                            <h3>About Tech Support Dashboard</h3>
+                            <p>An all-in-one portal designed to provide quick access to essential tools and resources for tech support representatives at Intelcia EG.
+                            <br>
+                            With instant filtering Search bar, Category filter buttons and Theme toggle switch as well as a local time clock this is created to make the job easier. 
+                            </p>
+                        </div>
+                        
+                        <div class="developer-info">
+                            <div class="developer-text">
+                                <h3>About the Developer</h3>
+                                <p class="developer-bio">
+                                    Hey! I'm <strong>Muhammad Salah</strong> — ex-Intelcian who's been around the block at Optimum USA in billing, collections, and technical support. These roles shaped my problem-solving mindset.
+                                </p>
+                                <p class="developer-bio">
+                                    Now, I’m also a web developer, focused on creating practical, problem-solving tools. I’m currently balancing both careers, using my skills to build applications that aim to support and simplify real business workflows.
+                                </p>
+                                <p class="version-info">Version 1.2.0</p>
+                            </div>
+                            <div class="developer-avatar">
+                                <div class="avatar-container">
+                                    <img src="./img/avatar.png" alt="Developer Avatar" class="avatar-image">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="feedback-section">
+                            <h3>Get In Touch...</h3>
+                            <a href="mailto:muhammadmeluk@gmail.com?subject=Dashboard%20Feedback" class="feedback-button-modal glass-button">
+                                <i class="fas fa-envelope"></i>
+                                <span></span>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="main.js"></script>

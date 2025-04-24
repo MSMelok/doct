@@ -73,14 +73,22 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
         
-        // Info button and modal functionality
-        infoButton.addEventListener('click', openModal);
-        closeModalButton.addEventListener('click', closeModal);
-        infoModalOverlay.addEventListener('click', (e) => {
-            if (e.target === infoModalOverlay) {
-                closeModal();
-            }
-        });
+       // Info button and modal functionality
+infoButton.addEventListener('click', () => {
+    gtag('event', 'info_button_click', {
+        event_category: 'interaction',
+        event_label: 'Tool Info Floating Button',
+        value: 1
+    });
+    openModal();
+});
+closeModalButton.addEventListener('click', closeModal);
+infoModalOverlay.addEventListener('click', (e) => {
+    if (e.target === infoModalOverlay) {
+        closeModal();
+    }
+});
+
         
         // Close modal with escape key
         document.addEventListener('keydown', (e) => {
@@ -177,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Wait a bit before showing the modal on first visit
             setTimeout(() => {
                 openModal();
-            }, 1500);
+            }, 1000);
         }
     }
     

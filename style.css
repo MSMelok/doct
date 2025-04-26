@@ -5,7 +5,8 @@
   --primary: #0ea5e9;
   --primary-light: #38bdf8;
   --primary-dark: #0284c7;
-  --surface: rgba(245, 247, 250, 0.35); /* Updated opacity to 35% for more transparency */
+  --primary-rgb: 14, 165, 233;
+  --surface: rgba(245, 247, 250, 0.35); /* Optimized opacity */
   --surface-hover: rgba(245, 247, 250, 0.45);
   --background: #edf2f7;
   --text: #1a202c;
@@ -21,10 +22,12 @@
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
-  --blur: 25px; /* Updated blur value to 25px */
+  --blur: 10px; /* Reduced blur for better performance */
   --glass-border: 1px solid rgba(255, 255, 255, 0.3);
   --gradient-bg: linear-gradient(135deg, #d2d2d2e0 0%, #bce4ff 25%, #509bff 50%, #ac98ff 75%, #6f8fff 100%);
-  --saturation: 0.5; /* Added saturation value of 50% */
+  --saturation: 0.5; /* Keeping original saturation */
+  --will-change-opacity: opacity;
+  --will-change-transform: transform;
 }
 
 [data-theme="dark"] {
@@ -61,12 +64,11 @@ body {
 }
 
 /* Glass morphism common styles */
+/* Only add backdrop-filter to essential elements for performance */
 .glass {
   background: var(--surface);
-  backdrop-filter: blur(var(--blur));
-  -webkit-backdrop-filter: blur(var(--blur));
   border: var(--glass-border);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: var(--shadow);
   position: relative;
   overflow: hidden;
   z-index: 1;
@@ -138,8 +140,11 @@ body {
   display: flex;
   flex-direction: column;
   position: relative;
+  opacity: 1; /* Always visible, no initial hiding */
+  transition: none; /* No transition needed */
 }
 
+/* Simplified overlay with minimal animation */
 .glass-overlay {
   position: fixed;
   top: 0;
@@ -148,13 +153,15 @@ body {
   height: 100%;
   pointer-events: none;
   background: 
-    radial-gradient(circle at 15% 15%, rgba(56, 189, 248, 0.25), transparent 45%),
-    radial-gradient(circle at 85% 85%, rgba(139, 92, 246, 0.25), transparent 45%),
-    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.05), transparent 75%);
+    radial-gradient(circle at 15% 15%, rgba(56, 189, 248, 0.15), transparent 45%),
+    radial-gradient(circle at 85% 85%, rgba(139, 92, 246, 0.15), transparent 45%);
   z-index: -1;
-  
-  /* Add subtle animation */
-  animation: pulse 15s infinite alternate ease-in-out;
+  will-change: opacity;
+}
+
+/* Remove glass overlay animation entirely */
+body.ready .glass-overlay {
+  /* No animation */
 }
 
 .header {
@@ -351,18 +358,14 @@ body {
 .card {
   border-radius: var(--radius);
   overflow: hidden;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
-  filter: saturate(var(--saturation)); /* Apply 50% saturation to cards */
-  backdrop-filter: blur(var(--blur));
-  -webkit-backdrop-filter: blur(var(--blur));
+  filter: saturate(var(--saturation));
   background: var(--surface);
   border: var(--glass-border);
-  box-shadow: 
-    0 8px 20px rgba(0, 0, 0, 0.1),
-    0 2px 4px rgba(0, 0, 0, 0.05),
-    inset 0 1px 1px rgba(255, 255, 255, 0.2);
-  perspective: 1000px;
+  box-shadow: var(--shadow);
+  will-change: var(--will-change-transform);
+  contain: content; /* Performance optimization */
 }
 
 .card::before {
@@ -389,11 +392,8 @@ body {
 }
 
 .card:hover {
-  transform: translateY(-4px) scale(1.02) translateZ(10px);
-  box-shadow: 
-    0 15px 35px rgba(0, 0, 0, 0.15),
-    0 5px 15px rgba(0, 0, 0, 0.1),
-    inset 0 1px 2px rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
   z-index: 2;
 }
 
@@ -417,24 +417,16 @@ body {
   justify-content: center;
   border-radius: var(--radius-sm);
   background: rgba(var(--primary-rgb), 0.1);
-  backdrop-filter: blur(var(--blur));
-  -webkit-backdrop-filter: blur(var(--blur));
   flex-shrink: 0;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   position: relative;
   overflow: hidden;
   border: var(--glass-border);
-  box-shadow: 
-    0 4px 12px rgba(0, 0, 0, 0.05),
-    inset 0 1px 1px rgba(255, 255, 255, 0.2);
-  transform: translateZ(20px);
+  box-shadow: var(--shadow-sm);
 }
 
 .card:hover .card-icon {
-  transform: scale(1.1) translateZ(30px);
-  box-shadow: 
-    0 8px 20px rgba(0, 0, 0, 0.1),
-    inset 0 1px 2px rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
   background: rgba(var(--primary-rgb), 0.15);
 }
 
@@ -509,14 +501,13 @@ body {
   display: none !important;
 }
 
+/* Simplified animation with minimal transform for better performance */
 @keyframes pulse {
   0% {
     opacity: 0.8;
-    transform: scale(1);
   }
   100% {
     opacity: 1;
-    transform: scale(1.05);
   }
 }
 
@@ -621,7 +612,7 @@ body {
 .info-button {
   bottom: 2rem;
   right: 2rem;
-  animation: pulse 2s infinite alternate ease-in-out;
+  /* Removed animation */
 }
 
 /* Email feedback button in the modal */
@@ -693,9 +684,8 @@ body {
 }
 
 .floating-button:hover {
-  transform: translateY(-4px) scale(1.05);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-  animation: none;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
 }
 
 /* Tooltip */
@@ -904,18 +894,14 @@ body {
   position: relative;
   overflow: hidden;
   border-radius: var(--radius-lg);
-  box-shadow: 
-    0 10px 30px rgba(0, 0, 0, 0.15),
-    0 5px 15px rgba(0, 0, 0, 0.1),
-    inset 0 1px 2px rgba(255, 255, 255, 0.3);
-  transform: perspective(800px) rotateY(-10deg);
-  transition: all 0.5s ease;
+  box-shadow: var(--shadow-md);
   background: var(--surface-hover);
   border: var(--glass-border);
 }
 
 .avatar-container:hover {
-  transform: perspective(800px) rotateY(0deg);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
 }
 
 .avatar-container::before {

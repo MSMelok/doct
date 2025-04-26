@@ -1,5 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // DOM elements
+    // Mark document as ready for animations and transitions immediately
+    document.body.classList.add('ready');
+    
+    // DOM elements - cache references to avoid repeated queries
     const searchInput = document.getElementById('searchInput');
     const categoryButtons = document.querySelectorAll('.category-btn');
     const cards = document.querySelectorAll('.card');
@@ -16,20 +19,65 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // State variables
     let currentCategory = 'all';
+    let searchTerm = '';
+    let searchTimeout;
+    let clockUpdateInterval;
+    
+    // Card data cache for faster filtering
+    const cardData = Array.from(cards).map(card => {
+        return {
+            element: card,
+            text: card.textContent.toLowerCase(),
+            searchTerms: (card.dataset.search || '').toLowerCase(),
+            category: card.dataset.category || '',
+            visible: true
+        };
+    });
     
     // Initialize the app
     initializeApp();
     
     /**
-     * Initialize all app features
+     * Initialize all app features with performance optimizations
      */
     function initializeApp() {
+        // Run non-UI critical tasks immediately
         initializeTheme();
         updateClock();
-        setInterval(updateClock, 1000);
-        setupEventListeners();
-        filterCards();
-        checkModalState();
+        
+        // Use requestAnimationFrame for smoother UI updates and better frame rendering
+        requestAnimationFrame(() => {
+            // Once the frame is ready, set up the UI
+            setupEventListeners();
+            // Remove animation class to avoid unnecessary transitions on page load
+            document.body.classList.add('ready');
+            
+            // Delay heavy operations slightly to prioritize initial render
+            setTimeout(() => {
+                filterCards();
+                checkModalState();
+            }, 100);
+        });
+        
+        // Set clock interval (update every minute instead of every second for better performance)
+        clockUpdateInterval = setInterval(updateClock, 60000);
+        
+        // Add event listener for page visibility changes to save resources when tab is inactive
+        document.addEventListener('visibilitychange', handleVisibilityChange);
+    }
+    
+    /**
+     * Handle page visibility changes to save resources
+     */
+    function handleVisibilityChange() {
+        if (document.hidden) {
+            // Page is hidden, clear interval to save resources
+            clearInterval(clockUpdateInterval);
+        } else {
+            // Page is visible again, update clock and restart interval
+            updateClock();
+            clockUpdateInterval = setInterval(updateClock, 60000);
+        }
     }
     
     /**
@@ -133,26 +181,41 @@ infoModalOverlay.addEventListener('click', (e) => {
     }
     
     /**
-     * Enhanced search functionality with fuzzy matching
-     * @param {string} searchTerm - Search term
+     * Optimized filtering function for better performance
+     * @param {string} query - Search term
      */
-    function filterCards(searchTerm = '') {
-        searchTerm = searchTerm.toLowerCase().trim();
+    function filterCards(query = '') {
+        // Store the search term
+        searchTerm = query.toLowerCase().trim();
         
-        cards.forEach(card => {
-            const cardText = card.textContent.toLowerCase();
-            const category = card.dataset.category || '';
-            const matchesSearch = cardText.includes(searchTerm);
-            const matchesCategory = currentCategory === 'all' || category.split(' ').includes(currentCategory);
+        // Use requestAnimationFrame for smoother UI updates
+        requestAnimationFrame(() => {
+            let visibleCount = 0;
             
-            if (matchesSearch && matchesCategory) {
-                card.classList.remove('hidden');
-                card.style.animation = 'none';
-                card.offsetHeight; // Trigger reflow
-                card.style.animation = null;
-            } else {
-                card.classList.add('hidden');
-            }
+            // Apply filter logic to each card using cached data
+            cardData.forEach(card => {
+                const matchesSearch = searchTerm === '' || 
+                                     card.text.includes(searchTerm) ||
+                                     card.searchTerms.includes(searchTerm);
+                const matchesCategory = currentCategory === 'all' || 
+                                       card.category.split(' ').includes(currentCategory);
+                
+                const shouldBeVisible = matchesSearch && matchesCategory;
+                
+                // Only manipulate DOM if visibility changed (reduces reflows)
+                if (card.visible !== shouldBeVisible) {
+                    if (shouldBeVisible) {
+                        card.element.classList.remove('hidden');
+                        visibleCount++;
+                    } else {
+                        card.element.classList.add('hidden');
+                    }
+                    
+                    card.visible = shouldBeVisible;
+                } else if (shouldBeVisible) {
+                    visibleCount++;
+                }
+            });
         });
     }
     

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
-    <!-- Google tag (gtag.js) Start -->
+    <!-- Google tag (gtag.js) Start - Defer for performance -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-427EN7ZQVS"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -13,11 +13,93 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tech Support Dashboard</title>
+
+    <!-- Critical CSS inlined for faster initial render -->
+    <style>
+        /* Critical rendering path styles */
+        :root {
+            --primary: #38bdf8;
+            --surface: rgba(255, 255, 255, 0.8);
+            --text: #334155;
+            --surface-hover: rgba(255, 255, 255, 0.9);
+            --radius: 12px;
+        }
+        [data-theme="dark"] {
+            --surface: rgba(15, 23, 42, 0.8);
+            --text: #e2e8f0;
+            --surface-hover: rgba(30, 41, 59, 0.8);
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text);
+            background-color: #f8fafc;
+            min-height: 100vh;
+        }
+        [data-theme="dark"] body {
+            background-color: #0f172a;
+        }
+        .app {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        body.ready .app {
+            opacity: 1;
+        }
+        .hidden {
+            display: none !important;
+        }
+        /* Spinner for initial loading */
+        .loading-spinner {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 40px;
+            border: 3px solid rgba(0,0,0,0.1);
+            border-radius: 50%;
+            border-top-color: var(--primary);
+            animation: spin 1s ease-in-out infinite;
+            z-index: 1000;
+        }
+        @keyframes spin {
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+        [data-theme="dark"] .loading-spinner {
+            border-color: rgba(255,255,255,0.1);
+            border-top-color: var(--primary);
+        }
+    </style>
+    
+    <!-- Preload most critical resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preload" href="style.css" as="style">
+    <link rel="preload" href="main.js" as="script">
+    
+    <!-- Preload critical images -->
+    <link rel="preload" href="./img/accessability.png" as="image" fetchpriority="high">
+    <link rel="preload" href="./img/cisco.png" as="image" fetchpriority="high">
+    <link rel="preload" href="./img/Outlook.png" as="image" fetchpriority="high">
+    <link rel="preload" href="./img/flash.png" as="image" fetchpriority="high">
+    
+    <!-- Main CSS -->
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="./img/accessability.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Load Font Awesome asynchronously for better initial load performance -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    
+    <!-- Preload Inter font -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
 </head>
 <body>
+    <!-- Content loads immediately without spinner -->
     <div class="app">
         <div class="glass-overlay"></div>
         <header class="header glass">
@@ -54,11 +136,11 @@
             </div>
 
             <div class="grid" id="toolsGrid">
-                <!-- Cards -->
-                <div class="card glass" data-category="DU">
+                <!-- Cards with data-search attributes for better search indexing -->
+                <div class="card glass" data-category="DU" data-search="cisco communication voip phone">
                     <a href="https://altparplfinp4.cvcauth.com/desktop/container/landing.jsp?locale=en_US" target="_blank">
                         <div class="card-icon">
-                            <img src="./img/cisco.png" alt="Cisco">
+                            <img src="./img/cisco.png" alt="Cisco" loading="lazy">
                         </div>
                         <div class="card-content">
                             <div class="card-title">Cisco</div>
@@ -480,6 +562,18 @@
         </div>
     </div>
 
-    <script src="main.js"></script>
+    <!-- Load main.js with defer to ensure it doesn't block rendering -->
+    <script src="main.js" defer></script>
+
+    <!-- Add noscript fallback for users without JavaScript -->
+    <noscript>
+        <style>
+            .app { opacity: 1; }
+        </style>
+        <div style="text-align: center; padding: 2rem; color: var(--text);">
+            <h3>This dashboard requires JavaScript to function properly</h3>
+            <p>Please enable JavaScript in your browser settings to use all features.</p>
+        </div>
+    </noscript>
 </body>
 </html>

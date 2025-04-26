@@ -22,7 +22,8 @@
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
-  --blur: 10px; /* Reduced blur for better performance */
+  --blur: 10px; /* Default blur for most elements */
+  --header-blur: 30px; /* Increased blur specifically for header */
   --glass-border: 1px solid rgba(255, 255, 255, 0.3);
   --gradient-bg: linear-gradient(135deg, #d2d2d2e0 0%, #bce4ff 25%, #509bff 50%, #ac98ff 75%, #6f8fff 100%);
   --saturation: 0.5; /* Keeping original saturation */
@@ -170,6 +171,8 @@ body.ready .glass-overlay {
   top: 0;
   z-index: 10;
   transition: all 0.3s ease;
+  backdrop-filter: blur(var(--header-blur));
+  -webkit-backdrop-filter: blur(var(--header-blur));
 }
 
 .header-content {

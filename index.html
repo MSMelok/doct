@@ -1,667 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Disclaimer Notice</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Redirecting...</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: linear-gradient(135deg, #0f172a, #1e293b);
+      --glass: rgba(255, 255, 255, 0.06);
+      --border: rgba(255, 255, 255, 0.15);
+      --text-main: #f0f0f0;
+      --text-subtle: #cccccc;
+      --accent: #4ade80; /* Soft green */
+      --accent-hover: #22c55e;
+      --radius: 20px;
+      --shadow: 0 10px 45px rgba(0, 0, 0, 0.4);
+    }
 
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            height: 100vh;
-            overflow: hidden;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
 
-        /* Subtle Background */
-        .background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background: 
-                radial-gradient(ellipse at top left, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
-                radial-gradient(ellipse at bottom right, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
-        }
+    html, body {
+      background: var(--bg);
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--text-main);
+    }
 
-        /* Professional Glassmorphism Card */
-        .disclaimer-card {
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(20px) saturate(140%);
-            -webkit-backdrop-filter: blur(20px) saturate(140%);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 24px;
-            padding: 3rem 2.5rem;
-            max-width: 650px;
-            width: 90%;
-            text-align: center;
-            box-shadow: 
-                0 20px 40px rgba(0, 0, 0, 0.15),
-                0 8px 32px rgba(99, 102, 241, 0.1),
-                inset 0 1px 0 rgba(255, 255, 255, 0.2);
-            position: relative;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: cardEntrance 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s forwards;
-        }
+    .card {
+      background: var(--glass);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(16px);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      width: 92%;
+      max-width: 800px;
+      padding: 60px 70px;
+      text-align: center;
+      animation: fadeIn 0.8s ease-out;
+    }
 
-        @keyframes cardEntrance {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: #ffffffdd;
+    }
 
-        .disclaimer-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            border-radius: 24px;
-            padding: 1px;
-            background: linear-gradient(135deg, 
-                rgba(255, 255, 255, 0.4) 0%,
-                rgba(139, 92, 246, 0.2) 50%,
-                rgba(255, 255, 255, 0.1) 100%);
-            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            mask-composite: xor;
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-        }
+    p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--text-subtle);
+      margin-bottom: 32px;
+    }
 
-        .card-content {
-            position: relative;
-            z-index: 1;
-        }
+    .countdown {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: var(--accent);
+      margin-bottom: 30px;
+    }
 
-        /* Clean Professional Typography */
-        .heading {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 2.5rem;
-            font-weight: 600;
-            color: #ffffff;
-            margin-bottom: 1.5rem;
-            letter-spacing: -0.02em;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: textSlideIn 0.6s ease-out 0.6s forwards;
-        }
+    button {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 14px 36px;
+      font-size: 1rem;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
 
-        .warning-text {
-            font-family: 'Inter', sans-serif;
-            font-size: 1.125rem;
-            font-weight: 400;
-            color: rgba(255, 255, 255, 0.9);
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: textSlideIn 0.6s ease-out 0.8s forwards;
-        }
+    button:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+    }
 
-        .responsibility-note {
-            font-size: 0.875rem;
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 2rem;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: textSlideIn 0.6s ease-out 1s forwards;
-        }
+    .footer {
+      font-size: 0.85rem;
+      margin-top: 30px;
+      color: #999;
+    }
 
-        /* Checkbox Container */
-        .checkbox-container {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            margin-bottom: 2rem;
-            text-align: left;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: textSlideIn 0.6s ease-out 1s forwards;
-        }
+    .footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
 
-        /* Hide default checkbox */
-        .acknowledge-checkbox {
-            opacity: 0;
-            position: absolute;
-            width: 0;
-            height: 0;
-        }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-        /* Custom checkbox label */
-        .checkbox-label {
-            font-family: 'Inter', sans-serif;
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.85rem;
-            line-height: 1.6;
-            font-weight: 300;
-            cursor: pointer;
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            transition: color 0.3s ease;
-        }
+    @media (max-width: 600px) {
+      .card {
+        padding: 40px 25px;
+      }
 
-        .checkbox-label:hover {
-            color: rgba(255, 255, 255, 0.85);
-        }
+      h1 {
+        font-size: 1.7rem;
+      }
 
-        /* Custom checkmark */
-        .checkmark {
-            width: 23px;
-            height: 23px;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-radius: 4px;
-            position: relative;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            flex-shrink: 0;
-            margin-top: 2px;
-        }
+      p {
+        font-size: 1rem;
+      }
 
-        .acknowledge-checkbox:checked + .checkbox-label .checkmark {
-            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-            border-color: #6366f1;
-        }
-
-        .acknowledge-checkbox:checked + .checkbox-label .checkmark::after {
-            content: '';
-            position: absolute;
-            left: 6px;
-            top: 2px;
-            width: 6px;
-            height: 10px;
-            border: solid white;
-            border-width: 0 2px 2px 0;
-            transform: rotate(45deg);
-        }
-
-        @keyframes textSlideIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Professional Button Styling */
-        .proceed-button {
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.9) 0%, rgba(139, 92, 246, 0.9) 100%);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 12px;
-            color: #ffffff;
-            font-size: 1rem;
-            font-weight: 500;
-            font-family: 'Space Grotesk', sans-serif;
-            padding: 0.875rem 2.5rem;
-            cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            text-decoration: none;
-            display: inline-block;
-            position: relative;
-            overflow: hidden;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: buttonSlideIn 0.6s ease-out 1.2s forwards;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            box-shadow: 
-                0 8px 25px rgba(99, 102, 241, 0.25),
-                inset 0 1px 0 rgba(255, 255, 255, 0.2);
-        }
-
-        .proceed-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, 
-                transparent,
-                rgba(255, 255, 255, 0.2),
-                transparent);
-            transition: left 0.5s ease;
-        }
-
-        .proceed-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 
-                0 12px 35px rgba(99, 102, 241, 0.35),
-                inset 0 1px 0 rgba(255, 255, 255, 0.3);
-            background: linear-gradient(135deg, rgba(99, 102, 241, 1) 0%, rgba(139, 92, 246, 1) 100%);
-        }
-
-        .proceed-button:hover::before {
-            left: 100%;
-        }
-
-        .proceed-button:active {
-            transform: translateY(-1px);
-            box-shadow: 
-                0 8px 25px rgba(99, 102, 241, 0.4),
-                inset 0 1px 0 rgba(255, 255, 255, 0.2);
-        }
-
-        @keyframes buttonSlideIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Button dodge effect when unchecked */
-        .proceed-button.dodging {
-            transition: transform 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            cursor: not-allowed;
-        }
-
-        .proceed-button.disabled {
-            /* Remove visual disabled state - button looks normal */
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .disclaimer-card {
-                max-width: 520px;
-                padding: 2.5rem 2rem;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .disclaimer-card {
-                max-width: 480px;
-                padding: 2rem 1.5rem;
-                margin: 1rem;
-                border-radius: 20px;
-            }
-
-            .heading {
-                font-size: 2rem;
-                margin-bottom: 1.25rem;
-            }
-
-            .warning-text {
-                font-size: 1rem;
-                margin-bottom: 1.25rem;
-            }
-
-            .responsibility-note {
-                font-size: 0.8rem;
-                margin-bottom: 1.5rem;
-            }
-
-            .proceed-button {
-                padding: 0.75rem 2rem;
-                font-size: 0.9rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .disclaimer-card {
-                max-width: 420px;
-                padding: 1.5rem 1.25rem;
-            }
-
-            .heading {
-                font-size: 1.75rem;
-            }
-
-            .warning-text {
-                font-size: 0.95rem;
-            }
-        }
-
-        /* Accessibility */
-        .proceed-button:focus {
-            outline: 2px solid rgba(59, 130, 246, 0.8);
-            outline-offset: 2px;
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            .background,
-            .background::before,
-            .disclaimer-card,
-            .heading,
-            .warning-text,
-            .responsibility-note,
-            .proceed-button {
-                animation: none;
-            }
-
-            .disclaimer-card {
-                opacity: 1;
-                transform: none;
-            }
-
-            .heading,
-            .warning-text,
-            .responsibility-note,
-            .proceed-button {
-                opacity: 1;
-                transform: none;
-            }
-        }
-
-        /* Loading state */
-        .page-loader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #0a0a0a;
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 1;
-            transition: opacity 0.5s ease;
-        }
-
-        .page-loader.fade-out {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .loader-spinner {
-            width: 40px;
-            height: 40px;
-            border: 2px solid rgba(255, 255, 255, 0.1);
-            border-top: 2px solid rgba(59, 130, 246, 0.8);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-    </style>
+      .countdown {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- Loading Screen -->
-    <div class="page-loader" id="pageLoader">
-        <div class="loader-spinner"></div>
+
+  <div class="card">
+    <h1>We’ve Moved to a Better Place 🚀</h1>
+    <p>
+      You’ve landed on our old turf. But we’ve packed up and gone to a brand-new, sleeker address.<br><br>
+      You’ll be redirected automatically in <span class="countdown" id="counter">20</span> seconds.
+    </p>
+    <button onclick="redirectNow()">Take Me There Now</button>
+    <div class="footer">
+      Or head straight to <a href="https://msmelok.github.io/cl/">msmelok.github.io/cl/</a>
     </div>
+  </div>
 
-    <!-- Animated Background -->
-    <div class="background"></div>
+  <script>
+    const redirectURL = "https://msmelok.github.io/cl/";
+    let countdown = 20;
+    const counterDisplay = document.getElementById('counter');
 
-    <!-- Main Content -->
-    <div class="disclaimer-card">
-        <div class="card-content">
-            <h1 class="heading">Disclaimer Notice</h1>
-            
-            <p class="warning-text">
-                So apparently, the Alexandria site management has decided this tool is too powerful (or maybe just too convenient?) — and has officially banned it.
-            </p>
-            <p class="warning-text">
-                If you're working outside Alexandria, or you're the rebellious type who reads disclaimers just for fun, you can go ahead and click Proceed.
-            </p>
-            
-            <div class="checkbox-container">
-                <input type="checkbox" id="acknowledge-checkbox" class="acknowledge-checkbox">
-                <label for="acknowledge-checkbox" class="checkbox-label">
-                    <span class="checkmark"></span>
-                No hard feelings. Just know: if someone yells at you, it won’t be me. 😉
-                <br>
-                —Mohamed A. Nasr—
-                </label>
-            </div>
-            
-            <button class="proceed-button" id="proceedButton">
-                Proceed
-            </button>
-        </div>
-    </div>
+    const interval = setInterval(() => {
+      countdown--;
+      counterDisplay.textContent = countdown;
+      if (countdown <= 0) {
+        clearInterval(interval);
+        window.location.href = redirectURL;
+      }
+    }, 1000);
 
-    <script>
-        // Professional page initialization
-        document.addEventListener('DOMContentLoaded', function() {
-            // Smooth loading sequence
-            setTimeout(function() {
-                const loader = document.getElementById('pageLoader');
-                loader.classList.add('fade-out');
-                
-                setTimeout(function() {
-                    loader.remove();
-                }, 500);
-            }, 800);
+    function redirectNow() {
+      window.location.href = redirectURL;
+    }
+  </script>
 
-            // Checkbox and button functionality
-            const proceedButton = document.getElementById('proceedButton');
-            const checkbox = document.getElementById('acknowledge-checkbox');
-            const card = document.querySelector('.disclaimer-card');
-            let dodgeTimeout;
-
-            // Function to check if checkbox is checked
-            function isCheckboxChecked() {
-                return checkbox.checked;
-            }
-
-            // Function to dodge the button with repelling force
-            function dodgeButton(e) {
-                if (!isCheckboxChecked()) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    
-                    // Clear any existing timeout
-                    clearTimeout(dodgeTimeout);
-                    
-                    // Add dodging class
-                    proceedButton.classList.add('dodging');
-                    
-                    // Get mouse position
-                    const mouseX = e.clientX;
-                    const mouseY = e.clientY;
-                    
-                    // Get button position
-                    const buttonRect = proceedButton.getBoundingClientRect();
-                    const buttonCenterX = buttonRect.left + buttonRect.width / 2;
-                    const buttonCenterY = buttonRect.top + buttonRect.height / 2;
-                    
-                    // Calculate repelling force direction (away from mouse)
-                    const deltaX = buttonCenterX - mouseX;
-                    const deltaY = buttonCenterY - mouseY;
-                    const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
-                    
-                    // Normalize direction and apply strong repelling force
-                    const repelForce = 120; // Strong force for immediate escape
-                    const normalizedX = deltaX / distance;
-                    const normalizedY = deltaY / distance;
-                    
-                    // Calculate offset with repelling force
-                    const offsetX = normalizedX * repelForce;
-                    const offsetY = normalizedY * repelForce;
-                    
-                    // Apply dodge transform with strong repelling effect
-                    proceedButton.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
-                    
-                    // Reset position after animation
-                    dodgeTimeout = setTimeout(() => {
-                        proceedButton.style.transform = '';
-                        proceedButton.classList.remove('dodging');
-                    }, 800);
-                    
-                    return false;
-                }
-            }
-
-            // Button click handler
-            proceedButton.addEventListener('click', function(e) {
-                if (!isCheckboxChecked()) {
-                    dodgeButton(e);
-                    return;
-                }
-                
-                e.preventDefault();
-                
-                // Smooth click animation
-                this.style.transform = 'translateY(-1px) scale(0.98)';
-                
-                // Professional loading state
-                const originalText = this.textContent;
-                this.textContent = 'Processing...';
-                this.disabled = true;
-                this.style.opacity = '0.8';
-                this.style.cursor = 'not-allowed';
-                
-                // Clean redirect with fade
-                setTimeout(() => {
-                    document.body.style.transition = 'opacity 0.4s ease';
-                    document.body.style.opacity = '0';
-                    
-                    setTimeout(() => {
-                        window.location.href = './tool.html';
-                    }, 400);
-                }, 1000);
-            });
-
-            // Button hover handler
-            proceedButton.addEventListener('mouseenter', function(e) {
-                if (!isCheckboxChecked()) {
-                    dodgeButton(e);
-                }
-            });
-
-            // Update button state when checkbox changes (visual state only)
-            checkbox.addEventListener('change', function() {
-                if (this.checked) {
-                    proceedButton.classList.remove('disabled');
-                } else {
-                    proceedButton.classList.add('disabled');
-                }
-            });
-
-            // Initialize button state (looks normal but will dodge)
-            proceedButton.classList.add('disabled');
-
-            // Continuous repelling effect when unchecked
-            let repellingInterval;
-            
-            function startRepelling() {
-                if (!isCheckboxChecked()) {
-                    repellingInterval = setInterval(() => {
-                        if (!isCheckboxChecked()) {
-                            // Get current mouse position
-                            const mouseX = window.mouseX || window.innerWidth / 2;
-                            const mouseY = window.mouseY || window.innerHeight / 2;
-                            
-                            // Get button position
-                            const buttonRect = proceedButton.getBoundingClientRect();
-                            const buttonCenterX = buttonRect.left + buttonRect.width / 2;
-                            const buttonCenterY = buttonRect.top + buttonRect.height / 2;
-                            
-                            // Calculate distance to mouse
-                            const deltaX = buttonCenterX - mouseX;
-                            const deltaY = buttonCenterY - mouseY;
-                            const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
-                            
-                            // Always run away from mouse - no distance limits
-                            // Calculate dynamic repelling force based on distance
-                            const maxDistance = 200;
-                            const minForce = 80;
-                            const maxForce = 150;
-                            
-                            // Inverse relationship: closer = stronger force
-                            const forceFactor = Math.max(0, (maxDistance - distance) / maxDistance);
-                            const repelForce = minForce + (forceFactor * (maxForce - minForce));
-                            
-                            const normalizedX = deltaX / distance;
-                            const normalizedY = deltaY / distance;
-                            
-                            const offsetX = normalizedX * repelForce;
-                            const offsetY = normalizedY * repelForce;
-                            
-                            proceedButton.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
-                            proceedButton.classList.add('dodging');
-                        }
-                    }, 16); // ~60fps for smooth movement
-                }
-            }
-
-            function stopRepelling() {
-                clearInterval(repellingInterval);
-                proceedButton.style.transform = '';
-                proceedButton.classList.remove('dodging');
-            }
-
-            // Track mouse position globally
-            document.addEventListener('mousemove', function(e) {
-                window.mouseX = e.clientX;
-                window.mouseY = e.clientY;
-            });
-
-            // Start repelling when page loads
-            startRepelling();
-
-            // Update repelling when checkbox changes
-            checkbox.addEventListener('change', function() {
-                if (this.checked) {
-                    stopRepelling();
-                } else {
-                    startRepelling();
-                }
-            });
-
-            // Keyboard accessibility
-            proceedButton.addEventListener('keydown', function(e) {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    this.click();
-                }
-            });
-
-            // Subtle parallax effect (very minimal)
-            let mouseX = 0;
-            let mouseY = 0;
-            let cardX = 0;
-            let cardY = 0;
-            
-            document.addEventListener('mousemove', function(e) {
-                mouseX = (e.clientX / window.innerWidth) - 0.5;
-                mouseY = (e.clientY / window.innerHeight) - 0.5;
-            });
-
-            function animateParallax() {
-                cardX += (mouseX * 5 - cardX) * 0.05;
-                cardY += (mouseY * 5 - cardY) * 0.05;
-                
-                const card = document.querySelector('.disclaimer-card');
-                if (card && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                    card.style.transform = `translateX(${cardX}px) translateY(${cardY}px)`;
-                }
-                
-                requestAnimationFrame(animateParallax);
-            }
-            
-            // Only start animations after elements are loaded
-            setTimeout(() => {
-                if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                    animateParallax();
-                }
-            }, 100);
-
-            // Professional console output
-            console.log('%cAlexandria Site Access Portal', 'color: #6366f1; font-size: 16px; font-weight: 600;');
-            console.log('%cProfessional disclaimer interface loaded successfully.', 'color: #64748b; font-size: 12px;');
-        });
-    </script>
-    </script>
 </body>
 </html>

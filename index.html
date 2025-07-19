@@ -3,21 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Redirecting...</title>
+  <title>Access Restricted</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg: linear-gradient(135deg, #0f172a, #1e293b);
-      --glass: rgba(255, 255, 255, 0.06);
-      --border: rgba(255, 255, 255, 0.15);
-      --text-main: #f0f0f0;
-      --text-subtle: #cccccc;
-      --accent: #4ade80; /* Soft green */
-      --accent-hover: #22c55e;
-      --radius: 20px;
-      --shadow: 0 10px 45px rgba(0, 0, 0, 0.4);
-    }
-
     * {
       box-sizing: border-box;
       margin: 0;
@@ -25,138 +13,72 @@
       font-family: 'Poppins', sans-serif;
     }
 
-    html, body {
-      background: var(--bg);
+    body, html {
       height: 100%;
+      background: #ffffff;
       display: flex;
       justify-content: center;
       align-items: center;
-      color: var(--text-main);
+      color: #1e293b;
+      padding: 20px;
     }
 
     .card {
-      background: var(--glass);
-      border: 1px solid var(--border);
-      backdrop-filter: blur(16px);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      width: 92%;
       max-width: 800px;
-      padding: 60px 70px;
+      width: 100%;
       text-align: center;
-      animation: fadeIn 0.8s ease-out;
+    }
+
+    .graphic {
+      background-image: url('https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 280px;
+      border-radius: 16px;
+      margin-bottom: 40px;
     }
 
     h1 {
-      font-size: 2.2rem;
-      font-weight: 600;
+      font-size: 2.5rem;
       margin-bottom: 20px;
-      color: #ffffffdd;
+      color: #dc2626;
     }
 
     p {
       font-size: 1.1rem;
-      line-height: 1.8;
-      color: var(--text-subtle);
-      margin-bottom: 32px;
-    }
-
-    .countdown {
-      font-size: 1.5rem;
-      font-weight: 500;
-      color: var(--accent);
+      color: #334155;
       margin-bottom: 30px;
+      line-height: 1.7;
     }
 
-    button {
-      background: var(--accent);
-      color: #fff;
-      border: none;
-      padding: 14px 36px;
-      font-size: 1rem;
-      border-radius: 50px;
-      cursor: pointer;
-      transition: background 0.3s ease, transform 0.2s ease;
-    }
-
-    button:hover {
-      background: var(--accent-hover);
-      transform: translateY(-2px);
-    }
-
-    .footer {
-      font-size: 0.85rem;
+    .footer_note {
       margin-top: 30px;
-      color: #999;
-    }
-
-    .footer a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      font-size: 0.9rem;
+      color: #64748b;
     }
 
     @media (max-width: 600px) {
-      .card {
-        padding: 40px 25px;
-      }
-
       h1 {
-        font-size: 1.7rem;
+        font-size: 1.8rem;
       }
 
-      p {
-        font-size: 1rem;
-      }
-
-      .countdown {
-        font-size: 1.2rem;
+      .graphic {
+        height: 200px;
       }
     }
   </style>
 </head>
 <body>
-
   <div class="card">
-    <h1>We’ve Moved to a Better Place 🚀</h1>
+    <div class="graphic"></div>
+    <h1>Heads-up, Intelcians 👋</h1>
     <p>
-      You’ve landed on our old turf. But we’ve packed up and gone to a brand-new, sleeker address.<br><br>
-      You’ll be redirected automatically in <span class="countdown" id="counter">20</span> seconds.
+      This tool is no longer available in Alexandria.<br>
+      Management asked me to restrict access, so I’ve done just that.<br><br>
+      Thanks for checking in. Hopefully, we’ll be back in your area soon.
     </p>
-    <button onclick="redirectNow()">Take Me There Now</button>
-    <div class="footer">
-      Or head straight to <a href="https://msmelok.github.io/cl/">msmelok.github.io/cl/</a>
-    </div>
+    <div class="footer_note">— Muhammad Salah, Frontend Dev @ EvoStatic</div>
   </div>
-
-  <script>
-    const redirectURL = "https://msmelok.github.io/cl/";
-    let countdown = 20;
-    const counterDisplay = document.getElementById('counter');
-
-    const interval = setInterval(() => {
-      countdown--;
-      counterDisplay.textContent = countdown;
-      if (countdown <= 0) {
-        clearInterval(interval);
-        window.location.href = redirectURL;
-      }
-    }, 1000);
-
-    function redirectNow() {
-      window.location.href = redirectURL;
-    }
-  </script>
-
 </body>
 </html>
